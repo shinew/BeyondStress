@@ -1,0 +1,760 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		145817F31A3441CB0070C457 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC11D1A14C00E00BD6B15 /* HockeySDK.framework */; };
+		145817F61A3442B30070C457 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F51A3442B30070C457 /* Conversion.swift */; };
+		145817F81A3443380070C457 /* BreakActivityCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F71A3443380070C457 /* BreakActivityCounter.swift */; };
+		145817FC1A3444EC0070C457 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817FA1A3444EC0070C457 /* HomeTabBarController.swift */; };
+		145817FD1A3444EC0070C457 /* PortraitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817FB1A3444EC0070C457 /* PortraitViewController.swift */; };
+		145818081A3444FF0070C457 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817FE1A3444FF0070C457 /* ActionsViewController.swift */; };
+		145818091A3444FF0070C457 /* BreaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817FF1A3444FF0070C457 /* BreaksViewController.swift */; };
+		1458180A1A3444FF0070C457 /* CalibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818001A3444FF0070C457 /* CalibrateViewController.swift */; };
+		1458180B1A3444FF0070C457 /* ConflictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818011A3444FF0070C457 /* ConflictViewController.swift */; };
+		1458180C1A3444FF0070C457 /* DeepBreathsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818021A3444FF0070C457 /* DeepBreathsViewController.swift */; };
+		1458180D1A3444FF0070C457 /* FearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818031A3444FF0070C457 /* FearViewController.swift */; };
+		1458180E1A3444FF0070C457 /* FrustrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818041A3444FF0070C457 /* FrustrationViewController.swift */; };
+		1458180F1A3444FF0070C457 /* OverwhelmedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818051A3444FF0070C457 /* OverwhelmedViewController.swift */; };
+		145818101A3444FF0070C457 /* ProtocolAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818061A3444FF0070C457 /* ProtocolAnimation.swift */; };
+		145818111A3444FF0070C457 /* ProtocolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818071A3444FF0070C457 /* ProtocolsViewController.swift */; };
+		145818191A3445B70070C457 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818141A3445B70070C457 /* Alarm.swift */; };
+		1458181A1A3445B70070C457 /* AlarmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818151A3445B70070C457 /* AlarmContainer.swift */; };
+		1458181B1A3445B70070C457 /* AlarmDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818161A3445B70070C457 /* AlarmDate.swift */; };
+		1458181C1A3445B70070C457 /* AlarmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818171A3445B70070C457 /* AlarmDB.swift */; };
+		1458181D1A3445B70070C457 /* AlarmScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818181A3445B70070C457 /* AlarmScheduler.swift */; };
+		14AEFC9E1A241FD300BD2F92 /* Realization.wav in Resources */ = {isa = PBXBuildFile; fileRef = 14AEFC9D1A241FD300BD2F92 /* Realization.wav */; };
+		14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2351A008C6D0042F20A /* AppDelegate.swift */; };
+		14D0E2391A008C6D0042F20A /* BeyondStress.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E2371A008C6D0042F20A /* BeyondStress.xcdatamodeld */; };
+		14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E23C1A008C6D0042F20A /* Main.storyboard */; };
+		14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D0E23F1A008C6D0042F20A /* Images.xcassets */; };
+		14FBC1221A14C00E00BD6B15 /* HockeySDK.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 14FBC11F1A14C00E00BD6B15 /* HockeySDK.xcconfig */; };
+		14FBC1231A14C00E00BD6B15 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 14FBC1201A14C00E00BD6B15 /* HockeySDKResources.bundle */; };
+		14FBC1251A14C02800BD6B15 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC1241A14C02800BD6B15 /* AssetsLibrary.framework */; };
+		14FBC1271A14C02D00BD6B15 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC1261A14C02D00BD6B15 /* CoreText.framework */; };
+		14FBC1291A14C03300BD6B15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC1281A14C03300BD6B15 /* CoreGraphics.framework */; };
+		14FBC12B1A14C03A00BD6B15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC12A1A14C03A00BD6B15 /* Foundation.framework */; };
+		14FBC12D1A14C03F00BD6B15 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC12C1A14C03F00BD6B15 /* MobileCoreServices.framework */; };
+		14FBC12F1A14C04400BD6B15 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC12E1A14C04400BD6B15 /* QuartzCore.framework */; };
+		14FBC1311A14C04A00BD6B15 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC1301A14C04A00BD6B15 /* QuickLook.framework */; };
+		14FBC1331A14C04F00BD6B15 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC1321A14C04F00BD6B15 /* Security.framework */; };
+		14FBC1351A14C05400BD6B15 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC1341A14C05400BD6B15 /* SystemConfiguration.framework */; };
+		14FBC1371A14C05900BD6B15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC1361A14C05900BD6B15 /* UIKit.framework */; };
+		14FBC1381A14C24B00BD6B15 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC11D1A14C00E00BD6B15 /* HockeySDK.framework */; };
+		1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */; };
+		1A5347DC1A07897C00CE742E /* @2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5347D81A07897C00CE742E /* @2x.png */; };
+		1A5347DD1A07897C00CE742E /* 5C.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5347D91A07897C00CE742E /* 5C.png */; };
+		1A5347DE1A07897C00CE742E /* Portrait - 6 Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5347DA1A07897C00CE742E /* Portrait - 6 Plus.png */; };
+		1A5347DF1A07897C00CE742E /* Portrait - 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A5347DB1A07897C00CE742E /* Portrait - 6.png */; };
+		1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */; };
+		1AB847C31A06EB95008509FE /* univers-condensed-italics.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BE1A06EB95008509FE /* univers-condensed-italics.ttf */; };
+		1AB847C41A06EB95008509FE /* univers-condensed-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */; };
+		1AB847C51A06EB95008509FE /* univers-LT-65-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C01A06EB95008509FE /* univers-LT-65-Bold.ttf */; };
+		1AB847C61A06EB95008509FE /* univers-medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C11A06EB95008509FE /* univers-medium.ttf */; };
+		1AB847C81A06ECF9008509FE /* Univers-Light-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */; };
+		1AB847C91A06ECF9008509FE /* univers-light-normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */; };
+		1AB847D51A0701B1008509FE /* univers-light-condensed-1361511939.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */; };
+		1AB847D61A0701B1008509FE /* Univers-Condensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */; };
+		1AB847DD1A07112F008509FE /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847D81A07112F008509FE /* BlurView.swift */; };
+		1AB847DE1A07112F008509FE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847D91A07112F008509FE /* Data.swift */; };
+		1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DA1A07112F008509FE /* DesignableView.swift */; };
+		1AB847E01A07112F008509FE /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DB1A07112F008509FE /* Misc.swift */; };
+		1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DC1A07112F008509FE /* SpringAnimation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14D0E2491A008C6D0042F20A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14D0E2281A008C6D0042F20A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14D0E22F1A008C6D0042F20A;
+			remoteInfo = Caramel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		143BD9581A2C676F00243912 /* Univers-LT-67-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-LT-67-Condensed-Bold.ttf"; sourceTree = "<group>"; };
+		143BD9591A2C676F00243912 /* UniversUltraCondensedBQ-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversUltraCondensedBQ-Light.otf"; sourceTree = "<group>"; };
+		145817F51A3442B30070C457 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		145817F71A3443380070C457 /* BreakActivityCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakActivityCounter.swift; sourceTree = "<group>"; };
+		145817FA1A3444EC0070C457 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		145817FB1A3444EC0070C457 /* PortraitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortraitViewController.swift; sourceTree = "<group>"; };
+		145817FE1A3444FF0070C457 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = BeyondStress/UI/Action/ActionsViewController.swift; sourceTree = SOURCE_ROOT; };
+		145817FF1A3444FF0070C457 /* BreaksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreaksViewController.swift; path = BeyondStress/UI/Action/BreaksViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818001A3444FF0070C457 /* CalibrateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalibrateViewController.swift; path = BeyondStress/UI/Action/CalibrateViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818011A3444FF0070C457 /* ConflictViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConflictViewController.swift; path = BeyondStress/UI/Action/ConflictViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818021A3444FF0070C457 /* DeepBreathsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeepBreathsViewController.swift; path = BeyondStress/UI/Action/DeepBreathsViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818031A3444FF0070C457 /* FearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FearViewController.swift; path = BeyondStress/UI/Action/FearViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818041A3444FF0070C457 /* FrustrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrustrationViewController.swift; path = BeyondStress/UI/Action/FrustrationViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818051A3444FF0070C457 /* OverwhelmedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OverwhelmedViewController.swift; path = BeyondStress/UI/Action/OverwhelmedViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818061A3444FF0070C457 /* ProtocolAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProtocolAnimation.swift; path = BeyondStress/UI/Action/ProtocolAnimation.swift; sourceTree = SOURCE_ROOT; };
+		145818071A3444FF0070C457 /* ProtocolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProtocolsViewController.swift; path = BeyondStress/UI/Action/ProtocolsViewController.swift; sourceTree = SOURCE_ROOT; };
+		145818141A3445B70070C457 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		145818151A3445B70070C457 /* AlarmContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmContainer.swift; sourceTree = "<group>"; };
+		145818161A3445B70070C457 /* AlarmDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDate.swift; sourceTree = "<group>"; };
+		145818171A3445B70070C457 /* AlarmDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDB.swift; sourceTree = "<group>"; };
+		145818181A3445B70070C457 /* AlarmScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmScheduler.swift; sourceTree = "<group>"; };
+		14AEFC9D1A241FD300BD2F92 /* Realization.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Realization.wav; sourceTree = "<group>"; };
+		14D0E2301A008C6D0042F20A /* BeyondStress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeyondStress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14D0E2341A008C6D0042F20A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14D0E2351A008C6D0042F20A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14D0E2381A008C6D0042F20A /* BeyondStress.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BeyondStress.xcdatamodel; sourceTree = "<group>"; };
+		14D0E23D1A008C6D0042F20A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14D0E23F1A008C6D0042F20A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		14D0E2481A008C6D0042F20A /* BeyondStressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeyondStressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14FBC11D1A14C00E00BD6B15 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		14FBC11F1A14C00E00BD6B15 /* HockeySDK.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = HockeySDK.xcconfig; sourceTree = "<group>"; };
+		14FBC1201A14C00E00BD6B15 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
+		14FBC1241A14C02800BD6B15 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		14FBC1261A14C02D00BD6B15 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		14FBC1281A14C03300BD6B15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		14FBC12A1A14C03A00BD6B15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		14FBC12C1A14C03F00BD6B15 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		14FBC12E1A14C04400BD6B15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		14FBC1301A14C04A00BD6B15 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		14FBC1321A14C04F00BD6B15 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		14FBC1341A14C05400BD6B15 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		14FBC1361A14C05900BD6B15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TipoType - Libertad.otf"; sourceTree = "<group>"; };
+		1A5347D81A07897C00CE742E /* @2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "@2x.png"; sourceTree = "<group>"; };
+		1A5347D91A07897C00CE742E /* 5C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5C.png; sourceTree = "<group>"; };
+		1A5347DA1A07897C00CE742E /* Portrait - 6 Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Portrait - 6 Plus.png"; sourceTree = "<group>"; };
+		1A5347DB1A07897C00CE742E /* Portrait - 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Portrait - 6.png"; sourceTree = "<group>"; };
+		1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-normal.ttf"; sourceTree = "<group>"; };
+		1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-black-normal.ttf"; sourceTree = "<group>"; };
+		1AB847BE1A06EB95008509FE /* univers-condensed-italics.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-condensed-italics.ttf"; sourceTree = "<group>"; };
+		1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-condensed-medium.ttf"; sourceTree = "<group>"; };
+		1AB847C01A06EB95008509FE /* univers-LT-65-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-LT-65-Bold.ttf"; sourceTree = "<group>"; };
+		1AB847C11A06EB95008509FE /* univers-medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-medium.ttf"; sourceTree = "<group>"; };
+		1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Light-Bold.ttf"; sourceTree = "<group>"; };
+		1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "univers-light-condensed-1361511939.ttf"; sourceTree = "<group>"; };
+		1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-Condensed-Bold.ttf"; sourceTree = "<group>"; };
+		1AB847D81A07112F008509FE /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		1AB847D91A07112F008509FE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1AB847DA1A07112F008509FE /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		1AB847DB1A07112F008509FE /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		1AB847DC1A07112F008509FE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14D0E22D1A008C6D0042F20A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				145817F31A3441CB0070C457 /* HockeySDK.framework in Frameworks */,
+				14FBC1371A14C05900BD6B15 /* UIKit.framework in Frameworks */,
+				14FBC1351A14C05400BD6B15 /* SystemConfiguration.framework in Frameworks */,
+				14FBC1331A14C04F00BD6B15 /* Security.framework in Frameworks */,
+				14FBC1311A14C04A00BD6B15 /* QuickLook.framework in Frameworks */,
+				14FBC12F1A14C04400BD6B15 /* QuartzCore.framework in Frameworks */,
+				14FBC12D1A14C03F00BD6B15 /* MobileCoreServices.framework in Frameworks */,
+				14FBC12B1A14C03A00BD6B15 /* Foundation.framework in Frameworks */,
+				14FBC1291A14C03300BD6B15 /* CoreGraphics.framework in Frameworks */,
+				14FBC1271A14C02D00BD6B15 /* CoreText.framework in Frameworks */,
+				14FBC1251A14C02800BD6B15 /* AssetsLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D0E2451A008C6D0042F20A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14FBC1381A14C24B00BD6B15 /* HockeySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		145817F21A343F830070C457 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				1A28C9F91A060CB000678084 /* Fonts */,
+				1A5347D71A07896C00CE742E /* LaunchImages */,
+				1AB847D71A07112F008509FE /* Spring */,
+				14AEFC9A1A241E3500BD2F92 /* Sounds */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		145817F41A34426B0070C457 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				145818131A34459D0070C457 /* Alarm */,
+				145817F71A3443380070C457 /* BreakActivityCounter.swift */,
+				145817F51A3442B30070C457 /* Conversion.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		145817F91A3444A80070C457 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				145817FA1A3444EC0070C457 /* HomeTabBarController.swift */,
+				145817FB1A3444EC0070C457 /* PortraitViewController.swift */,
+				145818121A34452A0070C457 /* Alarm */,
+				1AB847D41A06FBA0008509FE /* Action */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		145818121A34452A0070C457 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		145818131A34459D0070C457 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				145818141A3445B70070C457 /* Alarm.swift */,
+				145818151A3445B70070C457 /* AlarmContainer.swift */,
+				145818161A3445B70070C457 /* AlarmDate.swift */,
+				145818171A3445B70070C457 /* AlarmDB.swift */,
+				145818181A3445B70070C457 /* AlarmScheduler.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		14AEFC9A1A241E3500BD2F92 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				14AEFC9D1A241FD300BD2F92 /* Realization.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		14D0E2271A008C6D0042F20A = {
+			isa = PBXGroup;
+			children = (
+				14FBC1361A14C05900BD6B15 /* UIKit.framework */,
+				14FBC1341A14C05400BD6B15 /* SystemConfiguration.framework */,
+				14FBC1321A14C04F00BD6B15 /* Security.framework */,
+				14FBC1301A14C04A00BD6B15 /* QuickLook.framework */,
+				14FBC12E1A14C04400BD6B15 /* QuartzCore.framework */,
+				14FBC12C1A14C03F00BD6B15 /* MobileCoreServices.framework */,
+				14FBC12A1A14C03A00BD6B15 /* Foundation.framework */,
+				14FBC1281A14C03300BD6B15 /* CoreGraphics.framework */,
+				14FBC1261A14C02D00BD6B15 /* CoreText.framework */,
+				14FBC1241A14C02800BD6B15 /* AssetsLibrary.framework */,
+				14D0E2321A008C6D0042F20A /* BeyondStress */,
+				145817F21A343F830070C457 /* Misc */,
+				14D0E2311A008C6D0042F20A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14D0E2311A008C6D0042F20A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E2301A008C6D0042F20A /* BeyondStress.app */,
+				14D0E2481A008C6D0042F20A /* BeyondStressTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14D0E2321A008C6D0042F20A /* BeyondStress */ = {
+			isa = PBXGroup;
+			children = (
+				145817F91A3444A80070C457 /* UI */,
+				145817F41A34426B0070C457 /* Library */,
+				14FBC11B1A14BFF000BD6B15 /* Vendor */,
+				14D0E2351A008C6D0042F20A /* AppDelegate.swift */,
+				14D0E23C1A008C6D0042F20A /* Main.storyboard */,
+				14D0E23F1A008C6D0042F20A /* Images.xcassets */,
+				14D0E2371A008C6D0042F20A /* BeyondStress.xcdatamodeld */,
+				14D0E2331A008C6D0042F20A /* Supporting Files */,
+			);
+			path = BeyondStress;
+			sourceTree = "<group>";
+		};
+		14D0E2331A008C6D0042F20A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E2341A008C6D0042F20A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14FBC11B1A14BFF000BD6B15 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				14FBC11C1A14C00E00BD6B15 /* HockeySDK.embeddedframework */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		14FBC11C1A14C00E00BD6B15 /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				14FBC11D1A14C00E00BD6B15 /* HockeySDK.framework */,
+				14FBC11E1A14C00E00BD6B15 /* Resources */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeySDK-iOS/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
+		14FBC11E1A14C00E00BD6B15 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14FBC11F1A14C00E00BD6B15 /* HockeySDK.xcconfig */,
+				14FBC1201A14C00E00BD6B15 /* HockeySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1A28C9F91A060CB000678084 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				143BD9581A2C676F00243912 /* Univers-LT-67-Condensed-Bold.ttf */,
+				143BD9591A2C676F00243912 /* UniversUltraCondensedBQ-Light.otf */,
+				1AB847CA1A06EFCC008509FE /* univers-light-condensed-1361511939.ttf */,
+				1AB847BD1A06EB95008509FE /* univers-black-normal.ttf */,
+				1AB847BE1A06EB95008509FE /* univers-condensed-italics.ttf */,
+				1AB847C71A06EC9F008509FE /* Univers-Light-Bold.ttf */,
+				1AB847CB1A06F033008509FE /* Univers-Condensed-Bold.ttf */,
+				1AB847BF1A06EB95008509FE /* univers-condensed-medium.ttf */,
+				1AB847C01A06EB95008509FE /* univers-LT-65-Bold.ttf */,
+				1AB847C11A06EB95008509FE /* univers-medium.ttf */,
+				1A28C9FA1A060CBA00678084 /* TipoType - Libertad.otf */,
+				1A990CE01A06E98100C759F9 /* univers-light-normal.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1A5347D71A07896C00CE742E /* LaunchImages */ = {
+			isa = PBXGroup;
+			children = (
+				1A5347D81A07897C00CE742E /* @2x.png */,
+				1A5347D91A07897C00CE742E /* 5C.png */,
+				1A5347DA1A07897C00CE742E /* Portrait - 6 Plus.png */,
+				1A5347DB1A07897C00CE742E /* Portrait - 6.png */,
+			);
+			path = LaunchImages;
+			sourceTree = "<group>";
+		};
+		1AB847D41A06FBA0008509FE /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				145817FE1A3444FF0070C457 /* ActionsViewController.swift */,
+				145817FF1A3444FF0070C457 /* BreaksViewController.swift */,
+				145818001A3444FF0070C457 /* CalibrateViewController.swift */,
+				145818011A3444FF0070C457 /* ConflictViewController.swift */,
+				145818021A3444FF0070C457 /* DeepBreathsViewController.swift */,
+				145818031A3444FF0070C457 /* FearViewController.swift */,
+				145818041A3444FF0070C457 /* FrustrationViewController.swift */,
+				145818051A3444FF0070C457 /* OverwhelmedViewController.swift */,
+				145818071A3444FF0070C457 /* ProtocolsViewController.swift */,
+				145818061A3444FF0070C457 /* ProtocolAnimation.swift */,
+			);
+			name = Action;
+			path = ../Action;
+			sourceTree = "<group>";
+		};
+		1AB847D71A07112F008509FE /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				1AB847D81A07112F008509FE /* BlurView.swift */,
+				1AB847D91A07112F008509FE /* Data.swift */,
+				1AB847DA1A07112F008509FE /* DesignableView.swift */,
+				1AB847DB1A07112F008509FE /* Misc.swift */,
+				1AB847DC1A07112F008509FE /* SpringAnimation.swift */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14D0E22F1A008C6D0042F20A /* BeyondStress */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14D0E2521A008C6D0042F20A /* Build configuration list for PBXNativeTarget "BeyondStress" */;
+			buildPhases = (
+				14D0E22C1A008C6D0042F20A /* Sources */,
+				14D0E22D1A008C6D0042F20A /* Frameworks */,
+				14D0E22E1A008C6D0042F20A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeyondStress;
+			productName = Caramel;
+			productReference = 14D0E2301A008C6D0042F20A /* BeyondStress.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14D0E2471A008C6D0042F20A /* BeyondStressTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14D0E2551A008C6D0042F20A /* Build configuration list for PBXNativeTarget "BeyondStressTests" */;
+			buildPhases = (
+				14D0E2441A008C6D0042F20A /* Sources */,
+				14D0E2451A008C6D0042F20A /* Frameworks */,
+				14D0E2461A008C6D0042F20A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14D0E24A1A008C6D0042F20A /* PBXTargetDependency */,
+			);
+			name = BeyondStressTests;
+			productName = CaramelTests;
+			productReference = 14D0E2481A008C6D0042F20A /* BeyondStressTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14D0E2281A008C6D0042F20A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Beyond;
+				TargetAttributes = {
+					14D0E22F1A008C6D0042F20A = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 89S3RTKPWR;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					14D0E2471A008C6D0042F20A = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 14D0E22F1A008C6D0042F20A;
+					};
+				};
+			};
+			buildConfigurationList = 14D0E22B1A008C6D0042F20A /* Build configuration list for PBXProject "BeyondStress" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14D0E2271A008C6D0042F20A;
+			productRefGroup = 14D0E2311A008C6D0042F20A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14D0E22F1A008C6D0042F20A /* BeyondStress */,
+				14D0E2471A008C6D0042F20A /* BeyondStressTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14D0E22E1A008C6D0042F20A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AB847D51A0701B1008509FE /* univers-light-condensed-1361511939.ttf in Resources */,
+				1AB847D61A0701B1008509FE /* Univers-Condensed-Bold.ttf in Resources */,
+				1AB847C81A06ECF9008509FE /* Univers-Light-Bold.ttf in Resources */,
+				1AB847C91A06ECF9008509FE /* univers-light-normal.ttf in Resources */,
+				1A5347DE1A07897C00CE742E /* Portrait - 6 Plus.png in Resources */,
+				1A28C9FB1A060CD900678084 /* TipoType - Libertad.otf in Resources */,
+				1A5347DD1A07897C00CE742E /* 5C.png in Resources */,
+				14FBC1221A14C00E00BD6B15 /* HockeySDK.xcconfig in Resources */,
+				1AB847C61A06EB95008509FE /* univers-medium.ttf in Resources */,
+				1AB847C51A06EB95008509FE /* univers-LT-65-Bold.ttf in Resources */,
+				1AB847C31A06EB95008509FE /* univers-condensed-italics.ttf in Resources */,
+				14D0E23E1A008C6D0042F20A /* Main.storyboard in Resources */,
+				14D0E2401A008C6D0042F20A /* Images.xcassets in Resources */,
+				1A5347DF1A07897C00CE742E /* Portrait - 6.png in Resources */,
+				1AB847C21A06EB95008509FE /* univers-black-normal.ttf in Resources */,
+				1A5347DC1A07897C00CE742E /* @2x.png in Resources */,
+				14AEFC9E1A241FD300BD2F92 /* Realization.wav in Resources */,
+				14FBC1231A14C00E00BD6B15 /* HockeySDKResources.bundle in Resources */,
+				1AB847C41A06EB95008509FE /* univers-condensed-medium.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D0E2461A008C6D0042F20A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14D0E22C1A008C6D0042F20A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1458180C1A3444FF0070C457 /* DeepBreathsViewController.swift in Sources */,
+				1458180B1A3444FF0070C457 /* ConflictViewController.swift in Sources */,
+				1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */,
+				145817FC1A3444EC0070C457 /* HomeTabBarController.swift in Sources */,
+				14D0E2361A008C6D0042F20A /* AppDelegate.swift in Sources */,
+				1458181D1A3445B70070C457 /* AlarmScheduler.swift in Sources */,
+				1AB847DE1A07112F008509FE /* Data.swift in Sources */,
+				1458180F1A3444FF0070C457 /* OverwhelmedViewController.swift in Sources */,
+				1AB847DD1A07112F008509FE /* BlurView.swift in Sources */,
+				145818111A3444FF0070C457 /* ProtocolsViewController.swift in Sources */,
+				1458180D1A3444FF0070C457 /* FearViewController.swift in Sources */,
+				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
+				145818081A3444FF0070C457 /* ActionsViewController.swift in Sources */,
+				1AB847E01A07112F008509FE /* Misc.swift in Sources */,
+				1458181B1A3445B70070C457 /* AlarmDate.swift in Sources */,
+				145817F81A3443380070C457 /* BreakActivityCounter.swift in Sources */,
+				145818091A3444FF0070C457 /* BreaksViewController.swift in Sources */,
+				14D0E2391A008C6D0042F20A /* BeyondStress.xcdatamodeld in Sources */,
+				1458180E1A3444FF0070C457 /* FrustrationViewController.swift in Sources */,
+				145818101A3444FF0070C457 /* ProtocolAnimation.swift in Sources */,
+				145817F61A3442B30070C457 /* Conversion.swift in Sources */,
+				1458180A1A3444FF0070C457 /* CalibrateViewController.swift in Sources */,
+				145817FD1A3444EC0070C457 /* PortraitViewController.swift in Sources */,
+				1458181C1A3445B70070C457 /* AlarmDB.swift in Sources */,
+				145818191A3445B70070C457 /* Alarm.swift in Sources */,
+				1458181A1A3445B70070C457 /* AlarmContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D0E2441A008C6D0042F20A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14D0E24A1A008C6D0042F20A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14D0E22F1A008C6D0042F20A /* BeyondStress */;
+			targetProxy = 14D0E2491A008C6D0042F20A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14D0E23C1A008C6D0042F20A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14D0E23D1A008C6D0042F20A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14D0E2501A008C6D0042F20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14D0E2511A008C6D0042F20A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14D0E2531A008C6D0042F20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/BeyondStress/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/BeyondStress/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = BeyondStress;
+				PROVISIONING_PROFILE = "071b6f9c-48f9-4537-93a0-52496290e3f6";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		14D0E2541A008C6D0042F20A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+					"$(PROJECT_DIR)/BeyondStress/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/BeyondStress/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = BeyondStress;
+				PROVISIONING_PROFILE = "071b6f9c-48f9-4537-93a0-52496290e3f6";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		14D0E2561A008C6D0042F20A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CaramelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = BeyondStressTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetBeyond.app/GetBeyond";
+			};
+			name = Debug;
+		};
+		14D0E2571A008C6D0042F20A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
+				INFOPLIST_FILE = CaramelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = BeyondStressTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetBeyond.app/GetBeyond";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14D0E22B1A008C6D0042F20A /* Build configuration list for PBXProject "BeyondStress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D0E2501A008C6D0042F20A /* Debug */,
+				14D0E2511A008C6D0042F20A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14D0E2521A008C6D0042F20A /* Build configuration list for PBXNativeTarget "BeyondStress" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D0E2531A008C6D0042F20A /* Debug */,
+				14D0E2541A008C6D0042F20A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14D0E2551A008C6D0042F20A /* Build configuration list for PBXNativeTarget "BeyondStressTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14D0E2561A008C6D0042F20A /* Debug */,
+				14D0E2571A008C6D0042F20A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14D0E2371A008C6D0042F20A /* BeyondStress.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14D0E2381A008C6D0042F20A /* BeyondStress.xcdatamodel */,
+			);
+			currentVersion = 14D0E2381A008C6D0042F20A /* BeyondStress.xcdatamodel */;
+			path = BeyondStress.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 14D0E2281A008C6D0042F20A /* Project object */;
+}
