@@ -24,10 +24,13 @@ class AlarmCellView: UITableViewCell {
     @IBOutlet weak var fridayLabel: UILabel!
     @IBOutlet weak var saturdayLabel: UILabel!
     
+    private let TAG = "AlarmCellView"
+    
     private var alarm: Alarm!
     private var alarmContainerVC: AlarmContainerVC!
     
     @IBAction func enabledSwitchDidChange(sender: AnyObject) {
+        NSLog("(%@) %@", TAG, "alarm has toggled to \(self.enabledSwitch.on)")
         self.alarmContainerVC.updatedAlarmState(self.alarm, enabledState: self.enabledSwitch.on)
     }
     
@@ -60,7 +63,7 @@ class AlarmCellView: UITableViewCell {
     
     //sets the description text, can be empty
     private func setDescription(description: String) {
-        let descriptionString = (description == "") ? "Description" : description
+        let descriptionString = (description == "") ? "Nudge" : description
         dispatch_async(dispatch_get_main_queue(), {
             self.descriptionLabel.text = descriptionString
         })

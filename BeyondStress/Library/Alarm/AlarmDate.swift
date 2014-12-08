@@ -50,19 +50,36 @@ class AlarmDate {
         return self.days != 0
     }
     
+    func count() -> Int {
+        var total = 0
+        for i in 1 ... 7 {
+            if ((1 << (i-1)) & self.days) != 0 {
+                total++
+            }
+        }
+        return total
+    }
+    
+    func toggle(day: DayOfWeek) {
+        self.days ^= day.rawValue
+    }
+    
     func reset() {
         self.days = 0
     }
     
     class func getWeekdayNumber(day: DayOfWeek) -> Int {
-        var idx = 1
-        for i in 1 ... 7 {
-            if ((idx << (i-1)) & day.rawValue) != 0 {
+        for i in 1 ... 7 { //this is 1 ... 7 for compatibility reasons
+            if ((1 << (i-1)) & day.rawValue) != 0 {
                 return i
             }
         }
         NSLog("(AlarmDate) impossible weekday")
         return -1
+    }
+    
+    class func getDayOfWeek(index: Int) -> DayOfWeek {
+        return DayOfWeek.allValues[index]
     }
     
     func getRaw() -> Int {

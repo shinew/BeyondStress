@@ -11,11 +11,10 @@ import UIKit
 class AlarmContainerVC: UITableViewController {
     
     @IBOutlet weak var editButton: UIBarButtonItem!
-    @IBOutlet weak var addButton: UIBarButtonItem!
     
-    var cellViews = [AlarmCellView]()
-    var alarmContainer = AlarmContainer()
-    var indentConstraints = [NSLayoutConstraint]()
+    private var cellViews = [AlarmCellView]()
+    private var alarmContainer = AlarmContainer()
+    private var indentConstraints = [NSLayoutConstraint]()
     
     private let TAG = "AlarmContainerVC"
     
@@ -23,8 +22,8 @@ class AlarmContainerVC: UITableViewController {
         super.viewDidLoad()
         
         //TESTING CODE
-        self.alarmContainer.add(Alarm(text: "what", minute: 23, hour: 18, enabled: true, repeat: false, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(), index: -1))
-        self.alarmContainer.add(Alarm(text: "", minute: 2, hour: 3, enabled: true, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(day: DayOfWeek.Friday), index: -1))
+        //self.alarmContainer.add(Alarm(text: "what", minute: 23, hour: 18, enabled: true, repeat: false, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(), index: -1))
+        //self.alarmContainer.add(Alarm(text: "", minute: 2, hour: 3, enabled: true, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(day: DayOfWeek.Friday), index: -1))
         //END TESTING CODE
         
         //view formatting
@@ -97,6 +96,10 @@ class AlarmContainerVC: UITableViewController {
         self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
     }
     
+    func rowDidTap(indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("pushCustomization", sender: self)
+    }
+    
     //called by AlarmCellView if enabledSwitch was toggled
     func updatedAlarmState(alarm: Alarm, enabledState: Bool) {
         if enabledState {
@@ -126,5 +129,12 @@ class AlarmContainerVC: UITableViewController {
             return
         }
         self.removeAlarmCell(indexPath)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if self.tableView.editing == false {
+            return
+        }
+        self.rowDidTap(indexPath)
     }
 }

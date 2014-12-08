@@ -93,7 +93,7 @@
         <scene sceneID="21o-yY-Qvy">
             <objects>
                 <tableViewController id="B4g-p9-Mjq" customClass="AlarmContainerVC" customModule="BeyondStress" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xfP-NZ-n5I">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xfP-NZ-n5I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -108,17 +108,97 @@
                                 <action selector="editButtonDidPress:" destination="B4g-p9-Mjq" id="oHY-xc-TlB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="klC-Wm-Gun"/>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="klC-Wm-Gun">
+                            <connections>
+                                <segue destination="Vyd-Ub-Pzx" kind="show" identifier="pushCustomization" id="Hdk-ag-5rG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="addButton" destination="klC-Wm-Gun" id="Gqv-me-t4j"/>
                         <outlet property="editButton" destination="d6e-GM-mAq" id="yaD-HL-Sxx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIt-Ng-5es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1403.5" y="-696.5"/>
+        </scene>
+        <!--Add Nudge-->
+        <scene sceneID="Tlu-y6-Xtj">
+            <objects>
+                <viewController id="Vyd-Ub-Pzx" customClass="AlarmSettingVC" customModule="BeyondStress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MLb-Ug-1vl"/>
+                        <viewControllerLayoutGuide type="bottom" id="6uh-Q0-9wh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NSt-Ln-tCO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Uk-3n-HHS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="439726874.35300797">
+                                    <!--2014-12-08 10:21:14 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="timePickerValueChanged:" destination="Vyd-Ub-Pzx" eventType="valueChanged" id="A0d-8b-PW4"/>
+                                </connections>
+                            </datePicker>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-wc-nuT">
+                                <rect key="frame" x="0.0" y="308" width="375" height="310"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Nudge" id="xTx-fe-s7G">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YHN-HF-ceX">
+                            <connections>
+                                <action selector="cancelButtonDidPress:" destination="Vyd-Ub-Pzx" id="FAg-bl-XPo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ox2-C6-uLU">
+                            <connections>
+                                <action selector="saveButtonDidPress:" destination="Vyd-Ub-Pzx" id="5xg-7r-JEL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="uzX-wc-nuT" id="mx4-iL-8k5"/>
+                        <outlet property="timePicker" destination="0Uk-3n-HHS" id="V1t-R0-cl0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ii-FH-kA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.5" y="-696.5"/>
+        </scene>
+        <!--Alarm RepeatVC-->
+        <scene sceneID="XsT-Ci-fst">
+            <objects>
+                <tableViewController storyboardIdentifier="AlarmRepeatVC" id="yJw-La-6Ma" customClass="AlarmRepeatVC" customModule="BeyondStress" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PlU-BX-vb3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sGf-oJ-jfJ">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sGf-oJ-jfJ" id="yDr-aX-PRq">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yJw-La-6Ma" id="z3R-lQ-LxN"/>
+                            <outlet property="delegate" destination="yJw-La-6Ma" id="eWg-Me-Oyg"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lp1-IS-rm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2355.5" y="-696.5"/>
         </scene>
         <!--Actions-->
         <scene sceneID="1hx-DS-4ED">
@@ -319,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0P-gX-eHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804.5" y="-265.5"/>
+            <point key="canvasLocation" x="4203.5" y="-265.5"/>
         </scene>
         <!--Suggestions-->
         <scene sceneID="G1t-mI-wo3">

@@ -40,6 +40,12 @@ class Conversion {
         return "\(hour):\(minutes) \(suffix)"
     }
     
+    class func dateToHourMinute(date: NSDate!) -> (Int, Int) {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
+        return (components.hour, components.minute)
+    }
+    
     class func dateToTimelessDate(date: NSDate!) -> NSDate {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: date)

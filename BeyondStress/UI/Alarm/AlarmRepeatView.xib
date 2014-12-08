@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="univers-light-normal.ttf">
+            <string>Univers-Light-Normal</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AlarmRepeatView" customModule="BeyondStress" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqU-ix-fqV">
+                    <rect key="frame" x="12" y="288" width="42.5" height="23"/>
+                    <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="23"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trends-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Nmv-yy-DH1">
+                    <rect key="frame" x="568" y="289.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="4Tp-TJ-8S5"/>
+                        <constraint firstAttribute="width" constant="20" id="XWl-H7-GD5"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="Nmv-yy-DH1" secondAttribute="centerY" id="96p-TS-2y9"/>
+                <constraint firstAttribute="trailing" secondItem="Nmv-yy-DH1" secondAttribute="trailing" constant="12" id="ScH-lv-XkA"/>
+                <constraint firstAttribute="centerY" secondItem="CqU-ix-fqV" secondAttribute="centerY" id="blp-pV-sDu"/>
+                <constraint firstItem="CqU-ix-fqV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="i7T-IK-Wm1"/>
+            </constraints>
+            <connections>
+                <outlet property="checkmarkView" destination="Nmv-yy-DH1" id="mms-0g-wHe"/>
+                <outlet property="descriptionLabel" destination="CqU-ix-fqV" id="aia-Qu-WbD"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="trends-icon" width="41" height="25"/>
+    </resources>
+</document>

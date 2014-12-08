@@ -12,6 +12,11 @@ var _canRotate = false
 
 class HomeTabBarController: UITabBarController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tabBar.translucent = false
+    }
+    
     class func setCanRotate(canRotate: Bool) {
         _canRotate = canRotate
     }
