@@ -10,16 +10,23 @@ import UIKit
 
 class AlarmContainerVC: UITableViewController {
     
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     var cellViews = [AlarmCellView]()
     var alarmContainer = AlarmContainer()
+    var indentConstraints = [NSLayoutConstraint]()
     
-    @IBOutlet weak var editButton: UIBarButtonItem!
-    @IBOutlet weak var addButton: UINavigationItem!
+    private let TAG = "AlarmContainerVC"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.alarmContainer.add(Alarm(index: 0, enabled: true, repeat: false, dates: AlarmDate(), hour: 18, minute: 23, text: "Hi!"))
+        //remove extra separators for non-existing cells
+        self.tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        
+        //self.alarmContainer.add(Alarm(text: "what", minute: 23, hour: 18, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 0))
+        //self.alarmContainer.add(Alarm(text: "", minute: 2, hour: 3, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 1))
         
         if self.navigationController != nil {
             self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
@@ -29,9 +36,37 @@ class AlarmContainerVC: UITableViewController {
         
         for i in 0 ..< self.alarmContainer.count() {
             let contents = NSBundle.mainBundle().loadNibNamed("AlarmCellView", owner: nil, options: nil)
-            self.cellViews.append(contents.last! as AlarmCellView)
+            let newView = contents.last! as AlarmCellView
+            newView.selectionStyle = UITableViewCellSelectionStyle.None
+            self.cellViews.append(newView)
             self.cellViews.last!.containerReference = self
+            self.cellViews.last!.alarmReference = self.alarmContainer.getAlarmAtIndex(i)
             self.cellViews.last!.updateView()
+            
+            let indentConstraint = NSLayoutConstraint(item: self.cellViews[i].timeLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.cellViews[i], attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 35.0)
+            self.indentConstraints.append(indentConstraint)
+        }
+    }
+    
+    @IBAction func editButtonDidPress(sender: AnyObject) {
+        NSLog("(%@) %@", TAG, "Pressed edit button")
+        if self.tableView.editing {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.editButton.title = "Edit"
+            })
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.editButton.title = "Done"
+            })
+            self.tableView.setEditing(true, animated: true)
+        }
+        for i in 0 ..< self.cellViews.count {
+            if self.tableView.editing {
+                self.cellViews[i].addConstraint(self.indentConstraints[i])
+            } else {
+                self.cellViews[i].removeConstraint(self.indentConstraints[i])
+            }
         }
     }
     
@@ -53,6 +88,14 @@ class AlarmContainerVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return self.cellViews[indexPath.indexAtPosition(0)]
+        
+        /*var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell?
+        
+        if (cell == nil) {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        }
+        self.cellViews[indexPath.row].frame = cell!.frame
+        cell!.addSubview(self.cellViews[indexPath.row])*/
+        return self.cellViews[indexPath.row]
     }
 }

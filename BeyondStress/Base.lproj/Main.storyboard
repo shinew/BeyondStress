@@ -111,13 +111,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Nudges" id="vRM-QL-Oz0">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="d6e-GM-mAq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="d6e-GM-mAq">
+                            <connections>
+                                <action selector="editButtonDidPress:" destination="B4g-p9-Mjq" id="oHY-xc-TlB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" id="klC-Wm-Gun"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="addButton" destination="vRM-QL-Oz0" id="nRL-7H-dQy"/>
-                        <outlet property="editButton" destination="d6e-GM-mAq" id="PQ0-uy-yT3"/>
+                        <outlet property="addButton" destination="klC-Wm-Gun" id="Gqv-me-t4j"/>
+                        <outlet property="editButton" destination="d6e-GM-mAq" id="yaD-HL-Sxx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIt-Ng-5es" userLabel="First Responder" sceneMemberID="firstResponder"/>

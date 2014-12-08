@@ -28,7 +28,7 @@ class AlarmCellView: UITableViewCell {
     var containerReference: AlarmContainerVC!
     
     @IBAction func enabledSwitchDidChange(sender: AnyObject) {
-        self.containerReference.updatedAlarmState(self.alarmReference, enabledState: self.enabledSwitch.enabled)
+        self.containerReference.updatedAlarmState(self.alarmReference, enabledState: self.enabledSwitch.on)
     }
     
     func updateView() {
