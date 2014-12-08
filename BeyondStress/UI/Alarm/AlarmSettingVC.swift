@@ -45,7 +45,12 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     @IBAction func saveButtonDidPress(sender: AnyObject) {
         self.returnToAlarmContainerVC()
     }
+    
     @IBAction func timePickerValueChanged(sender: AnyObject) {
+        let hourMinute = Conversion.dateToHourMinute(timePicker.date)
+        self.alarm.hour = hourMinute.0
+        self.alarm.minute = hourMinute.1
+        NSLog("(%@) %@", TAG, "New hour: \(self.alarm.hour), minute: \(self.alarm.minute)")
     }
     
     func addSettingCell(key: String) {
