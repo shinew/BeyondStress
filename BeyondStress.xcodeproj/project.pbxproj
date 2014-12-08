@@ -702,7 +702,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = CaramelTests/Info.plist;
+				INFOPLIST_FILE = BeyondStress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = BeyondStressTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeyondStress.app/BeyondStress";
@@ -718,7 +718,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendor/HockeySDK-iOS/HockeySDK.embeddedframework",
 				);
-				INFOPLIST_FILE = CaramelTests/Info.plist;
+				INFOPLIST_FILE = BeyondStress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = BeyondStressTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BeyondStress.app/BeyondStress";

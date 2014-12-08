@@ -22,34 +22,30 @@ class AlarmContainerVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //remove extra separators for non-existing cells
-        self.tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
+        //TESTING CODE
+        self.alarmContainer.add(Alarm(text: "what", minute: 23, hour: 18, enabled: true, repeat: false, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(), index: -1))
+        self.alarmContainer.add(Alarm(text: "", minute: 2, hour: 3, enabled: true, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(day: DayOfWeek.Friday), index: -1))
+        //END TESTING CODE
         
-        //self.alarmContainer.add(Alarm(text: "what", minute: 23, hour: 18, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 0))
-        //self.alarmContainer.add(Alarm(text: "", minute: 2, hour: 3, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 1))
-        
+        //view formatting
         if self.navigationController != nil {
             self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
         }
-        
         self.tableView.rowHeight = 80
+        //remove extra separators for non-existing cells
+        self.tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
         for i in 0 ..< self.alarmContainer.count() {
-            let contents = NSBundle.mainBundle().loadNibNamed("AlarmCellView", owner: nil, options: nil)
-            let newView = contents.last! as AlarmCellView
-            newView.selectionStyle = UITableViewCellSelectionStyle.None
-            self.cellViews.append(newView)
-            self.cellViews.last!.containerReference = self
-            self.cellViews.last!.alarmReference = self.alarmContainer.getAlarmAtIndex(i)
-            self.cellViews.last!.updateView()
-            
-            let indentConstraint = NSLayoutConstraint(item: self.cellViews[i].timeLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.cellViews[i], attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 35.0)
-            self.indentConstraints.append(indentConstraint)
+            self.addAlarmCell(self.alarmContainer.getAlarmAtIndex(i))
         }
     }
     
     @IBAction func editButtonDidPress(sender: AnyObject) {
         NSLog("(%@) %@", TAG, "Pressed edit button")
+        self.editViewUpdate()
+    }
+    
+    func editViewUpdate() {
         if self.tableView.editing {
             dispatch_async(dispatch_get_main_queue(), {
                 self.editButton.title = "Edit"
@@ -61,15 +57,47 @@ class AlarmContainerVC: UITableViewController {
             })
             self.tableView.setEditing(true, animated: true)
         }
+        self.reindentRows()
+    }
+    
+    //adds/removes the autolayout constraint to indent the front
+    func reindentRows() {
         for i in 0 ..< self.cellViews.count {
             if self.tableView.editing {
-                self.cellViews[i].addConstraint(self.indentConstraints[i])
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.cellViews[i].addConstraint(self.indentConstraints[i])
+                    self.cellViews[i].enabledSwitch.hidden = true
+                })
             } else {
-                self.cellViews[i].removeConstraint(self.indentConstraints[i])
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.cellViews[i].removeConstraint(self.indentConstraints[i])
+                    self.cellViews[i].enabledSwitch.hidden = false
+                })
             }
         }
     }
     
+    func addAlarmCell(alarm: Alarm) {
+        let contents = NSBundle.mainBundle().loadNibNamed("AlarmCellView", owner: nil, options: nil)
+        let newView = contents.last! as AlarmCellView
+        newView.selectionStyle = UITableViewCellSelectionStyle.None
+        self.cellViews.append(newView)
+        self.cellViews.last!.setReferences(alarm, alarmContainerVC: self)
+        self.cellViews.last!.updateView()
+        
+        //add indentation logic
+        let indentConstraint = NSLayoutConstraint(item: newView.timeLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: newView, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 45.0)
+        self.indentConstraints.append(indentConstraint)
+    }
+    
+    func removeAlarmCell(indexPath: NSIndexPath) {
+        self.alarmContainer.remove(indexPath.row)
+        self.cellViews.removeAtIndex(indexPath.row)
+        self.indentConstraints.removeAtIndex(indexPath.row)
+        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+    }
+    
+    //called by AlarmCellView if enabledSwitch was toggled
     func updatedAlarmState(alarm: Alarm, enabledState: Bool) {
         if enabledState {
             alarm.enableAlarm()
@@ -79,6 +107,7 @@ class AlarmContainerVC: UITableViewController {
         self.alarmContainer.update()
     }
     
+    /*----------------------OVERRIDE FUNCTIONS----------------------*/
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -88,14 +117,14 @@ class AlarmContainerVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        /*var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell?
-        
-        if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
-        }
-        self.cellViews[indexPath.row].frame = cell!.frame
-        cell!.addSubview(self.cellViews[indexPath.row])*/
         return self.cellViews[indexPath.row]
+    }
+    
+    //removes the alarm indexed at indexPath
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle != UITableViewCellEditingStyle.Delete {
+            return
+        }
+        self.removeAlarmCell(indexPath)
     }
 }

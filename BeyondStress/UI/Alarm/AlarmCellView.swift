@@ -24,18 +24,23 @@ class AlarmCellView: UITableViewCell {
     @IBOutlet weak var fridayLabel: UILabel!
     @IBOutlet weak var saturdayLabel: UILabel!
     
-    var alarmReference: Alarm!
-    var containerReference: AlarmContainerVC!
+    private var alarm: Alarm!
+    private var alarmContainerVC: AlarmContainerVC!
     
     @IBAction func enabledSwitchDidChange(sender: AnyObject) {
-        self.containerReference.updatedAlarmState(self.alarmReference, enabledState: self.enabledSwitch.on)
+        self.alarmContainerVC.updatedAlarmState(self.alarm, enabledState: self.enabledSwitch.on)
+    }
+    
+    func setReferences(alarm: Alarm, alarmContainerVC: AlarmContainerVC) {
+        self.alarm = alarm
+        self.alarmContainerVC = alarmContainerVC
     }
     
     func updateView() {
-        self.setEnabled(self.alarmReference.enabled)
-        self.setDays(self.alarmReference.dates)
-        self.setTime(self.alarmReference.hour, minutes: self.alarmReference.minute)
-        self.setDescription(self.alarmReference.text)
+        self.setEnabled(self.alarm.enabled)
+        self.setDays(self.alarm.dates)
+        self.setTime(self.alarm.hour, minutes: self.alarm.minute)
+        self.setDescription(self.alarm.text)
     }
     
     //sets the time in 24hr time, where hour is # hours past midnight
@@ -63,7 +68,15 @@ class AlarmCellView: UITableViewCell {
     
     //sets the coloring for the days of week
     private func setDays(days: AlarmDate) {
-        let dayLabels = [self.sundayLabel, self.mondayLabel, self.tuesdayLabel, self.wednesdayLabel, self.thursdayLabel, self.fridayLabel, self.saturdayLabel]
+        let dayLabels = [
+            self.sundayLabel,
+            self.mondayLabel,
+            self.tuesdayLabel,
+            self.wednesdayLabel,
+            self.thursdayLabel,
+            self.fridayLabel,
+            self.saturdayLabel
+        ]
         for i in 0 ..< dayLabels.count {
             if days.contains(DayOfWeek.allValues[i]) {
                 dispatch_async(dispatch_get_main_queue(), {
