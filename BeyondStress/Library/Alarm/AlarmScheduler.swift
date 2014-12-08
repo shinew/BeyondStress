@@ -50,13 +50,13 @@ class AlarmScheduler {
     private func setNotification(date: NSDate, repeatWeekly: Bool) {
         var notification = UILocalNotification()
         notification.alertBody = message
-        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.soundName = "Realization.wav"
         notification.fireDate = date
         if repeatWeekly {
             notification.repeatInterval = NSCalendarUnit.WeekCalendarUnit
         }
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
-        NSLog("(%@) %@", TAG, "Notification set for \(Conversion.dateToString(date))")
+        NSLog("(%@) %@", TAG, "Notification set for \(Conversion.dateToString(date)).\nRepeat is \(repeatWeekly).")
     }
 }

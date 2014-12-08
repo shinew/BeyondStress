@@ -25,6 +25,14 @@ class AlarmContainer {
         
         self.alarms = self.dbBridge.getAlarms()
         self.alarms.sort { $0.index < $1.index }
+        
+        self.updateState()
+    }
+    
+    //
+    func update() {
+        NSLog("(%@) %@", TAG, "updated general status")
+        self.updateState()
     }
     
     //updates the state of an alarm
@@ -67,8 +75,20 @@ class AlarmContainer {
         self.updateState()
     }
     
+    func count() -> Int {
+        return self.alarms.count
+    }
+    
+    func getAlarmAtIndex(index: Int) -> Alarm {
+        return self.alarms[index]
+    }
+    
     //updates notifications and DB
     private func updateState() {
+        for alarm in self.alarms {
+            alarm.disableIfNecessary(nil)
+        }
+        
         self.dbBridge.setAlarms(self.alarms)
         self.notificationBridge.rescheduleAlarms(self.alarms)
     }

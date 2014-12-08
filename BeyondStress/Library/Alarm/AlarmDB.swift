@@ -32,13 +32,14 @@ class AlarmDB {
                 let thisItem = item as NSManagedObject
                 _db_alarmResult.append(
                     Alarm(
-                        index: thisItem.valueForKey("index") as Int,
+                        text: thisItem.valueForKey("text") as String,
+                        minute: thisItem.valueForKey("minute") as Int,
+                        hour: thisItem.valueForKey("hour") as Int,
                         enabled: thisItem.valueForKey("enabled") as Bool,
                         repeat: thisItem.valueForKey("repeat") as Bool,
+                        fireDate: thisItem.valueForKey("fireDate") as NSDate,
                         dates: AlarmDate(days: thisItem.valueForKey("dates") as Int),
-                        hour: thisItem.valueForKey("hour") as Int,
-                        minute: thisItem.valueForKey("minute") as Int,
-                        text: thisItem.valueForKey("text") as String
+                        index: thisItem.valueForKey("index") as Int
                     )
                 )
             }
@@ -61,13 +62,14 @@ class AlarmDB {
             
             for alarm in alarms {
                 var alarmEntity = NSEntityDescription.insertNewObjectForEntityForName("Alarm", inManagedObjectContext: appContext) as NSManagedObject
-                alarmEntity.setValue(alarm.index, forKey: "index")
+                alarmEntity.setValue(alarm.text, forKey: "text")
+                alarmEntity.setValue(alarm.minute, forKey: "minute")
+                alarmEntity.setValue(alarm.hour, forKey: "hour")
                 alarmEntity.setValue(alarm.enabled, forKey: "enabled")
                 alarmEntity.setValue(alarm.repeat, forKey: "repeat")
+                alarmEntity.setValue(alarm.fireDate, forKey: "fireDate")
                 alarmEntity.setValue(alarm.dates.getRaw(), forKey: "dates")
-                alarmEntity.setValue(alarm.hour, forKey: "hour")
-                alarmEntity.setValue(alarm.minute, forKey: "minute")
-                alarmEntity.setValue(alarm.text, forKey: "text")
+                alarmEntity.setValue(alarm.index, forKey: "index")
             }
             
             appContext.save(nil)

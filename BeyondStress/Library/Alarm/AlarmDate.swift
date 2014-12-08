@@ -46,6 +46,10 @@ class AlarmDate {
         return (self.days & day.rawValue) != 0
     }
     
+    func hasAny() -> Bool {
+        return self.days != 0
+    }
+    
     func reset() {
         self.days = 0
     }

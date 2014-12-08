@@ -9,7 +9,7 @@
 import UIKit
 
 //min height: 65
-class AlarmCellView: UIView {
+class AlarmCellView: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var ampmLabel: UILabel!
@@ -24,10 +24,24 @@ class AlarmCellView: UIView {
     @IBOutlet weak var fridayLabel: UILabel!
     @IBOutlet weak var saturdayLabel: UILabel!
     
+    var alarmReference: Alarm!
+    var containerReference: AlarmContainerVC!
+    
+    @IBAction func enabledSwitchDidChange(sender: AnyObject) {
+        self.containerReference.updatedAlarmState(self.alarmReference, enabledState: self.enabledSwitch.enabled)
+    }
+    
+    func updateView() {
+        self.setEnabled(self.alarmReference.enabled)
+        self.setDays(self.alarmReference.dates)
+        self.setTime(self.alarmReference.hour, minutes: self.alarmReference.minute)
+        self.setDescription(self.alarmReference.text)
+    }
+    
     //sets the time in 24hr time, where hour is # hours past midnight
     //hour: [0, 23]
     //minutes: [0, 59]
-    func setTime(hour: Int, minutes: Int) {
+    private func setTime(hour: Int, minutes: Int) {
         let hourString = String(format: "%02d", (hour % 12 == 0) ? 12 : (hour % 12))
         let minuteString = String(format: "%02d", minutes)
         let timeString = hourString + ":" + minuteString
@@ -40,7 +54,7 @@ class AlarmCellView: UIView {
     }
     
     //sets the description text, can be empty
-    func setDescription(description: String) {
+    private func setDescription(description: String) {
         let descriptionString = (description == "") ? "Description" : description
         dispatch_async(dispatch_get_main_queue(), {
             self.descriptionLabel.text = descriptionString
@@ -48,7 +62,7 @@ class AlarmCellView: UIView {
     }
     
     //sets the coloring for the days of week
-    func setDays(days: AlarmDate) {
+    private func setDays(days: AlarmDate) {
         let dayLabels = [self.sundayLabel, self.mondayLabel, self.tuesdayLabel, self.wednesdayLabel, self.thursdayLabel, self.fridayLabel, self.saturdayLabel]
         for i in 0 ..< dayLabels.count {
             if days.contains(DayOfWeek.allValues[i]) {
@@ -60,6 +74,18 @@ class AlarmCellView: UIView {
                     dayLabels[i].textColor = UIColor.lightGrayColor()
                 })
             }
+        }
+    }
+    
+    private func setEnabled(enabled: Bool) {
+        if enabled {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.enabledSwitch.setOn(true, animated: true)
+            })
+        } else {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.enabledSwitch.setOn(false, animated: true)
+            })
         }
     }
 }

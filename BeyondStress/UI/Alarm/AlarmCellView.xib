@@ -87,6 +87,9 @@
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ga-Np-qz0">
                     <rect key="frame" x="539" y="12" width="51" height="31"/>
+                    <connections>
+                        <action selector="enabledSwitchDidChange:" destination="iN0-l3-epB" eventType="valueChanged" id="U4p-p3-RyI"/>
+                    </connections>
                 </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

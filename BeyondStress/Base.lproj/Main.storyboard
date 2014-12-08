@@ -110,8 +110,15 @@
                             <outlet property="delegate" destination="B4g-p9-Mjq" id="xxU-Y1-UPr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Nudges" id="vRM-QL-Oz0"/>
+                    <navigationItem key="navigationItem" title="Nudges" id="vRM-QL-Oz0">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="d6e-GM-mAq"/>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="klC-Wm-Gun"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButton" destination="vRM-QL-Oz0" id="nRL-7H-dQy"/>
+                        <outlet property="editButton" destination="d6e-GM-mAq" id="PQ0-uy-yT3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FIt-Ng-5es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
