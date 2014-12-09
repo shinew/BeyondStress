@@ -37,6 +37,7 @@ class AlarmCellView: UITableViewCell {
     func setReferences(alarm: Alarm, alarmContainerVC: AlarmContainerVC) {
         self.alarm = alarm
         self.alarmContainerVC = alarmContainerVC
+        self.updateView()
     }
     
     func updateView() {

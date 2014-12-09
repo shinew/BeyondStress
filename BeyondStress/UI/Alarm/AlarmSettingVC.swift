@@ -25,8 +25,20 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         self.alarmContainerVC = self.navigationController!.viewControllers[0] as AlarmContainerVC
         
         let time = Conversion.dateToHourMinute(self.timePicker.date)
-        self.alarm = Alarm(text: "Nudge", minute: time.1, hour: time.0, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 0)
-
+        
+        let possibleAlarm = self.alarmContainerVC.editAlarm
+        
+        if (possibleAlarm != nil) {
+            self.alarm = possibleAlarm!.copy()
+        } else {
+            self.alarm = Alarm(text: "Nudge", minute: time.1, hour: time.0, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 0)
+        }
+        
+        let newDate = Conversion.hourMinuteToDate(self.alarm.hour, minute: self.alarm.minute)
+        dispatch_async(dispatch_get_main_queue(), {
+            self.timePicker.setDate(newDate, animated: false)
+        })
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -39,6 +51,7 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func cancelButtonDidPress(sender: AnyObject) {
+        self.alarmContainerVC.cancelNewAlarm()
         self.returnToAlarmContainerVC()
     }
     
@@ -55,23 +68,24 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     }
     
     func addSettingCell(key: String) {
-    let contents = NSBundle.mainBundle().loadNibNamed("AlarmSettingView", owner: nil, options: nil)
-    let newView = contents.last! as AlarmSettingView
+        let contents = NSBundle.mainBundle().loadNibNamed("AlarmSettingView", owner: nil, options: nil)
+        let newView = contents.last! as AlarmSettingView
         if key == self.keys[0] {
             newView.setKeyDateLabel(key, defaultDate: self.alarm.dates, defaultLabel: nil)
         } else {
-            newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: "Nudge")
+            newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: self.alarm.text)
         }
         self.settingCells.append(newView)
         newView.selectionStyle = UITableViewCellSelectionStyle.None
     }
     
-    func setAlarm(alarm: Alarm) {
-        self.alarm = alarm
-    }
-    
     func notifyNewDate(date: AlarmDate) {
         self.alarm.dates = date
+        if self.alarm.dates.hasAny() {
+            self.alarm.repeat = true
+        } else {
+            self.alarm.repeat = false
+        }
         self.updateRepeatLabel()
     }
     

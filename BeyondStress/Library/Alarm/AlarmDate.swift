@@ -38,6 +38,10 @@ class AlarmDate {
         self.days = days
     }
     
+    func copy() -> AlarmDate {
+        return AlarmDate(days: self.days)
+    }
+    
     func add(day: DayOfWeek) {
         self.days |= day.rawValue
     }

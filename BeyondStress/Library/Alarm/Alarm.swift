@@ -43,6 +43,19 @@ class Alarm {
         self.index = index
     }
     
+    func copy() -> Alarm {
+        return Alarm(
+            text: self.text,
+            minute: self.minute,
+            hour: self.hour,
+            enabled: self.enabled,
+            repeat: self.repeat,
+            fireDate: self.fireDate,
+            dates: self.dates.copy(),
+            index: self.index
+        )
+    }
+    
     //Returns a time to fire the notification for this alarm. Guaranteed to be on weekday 'day' (if day != nil), and after the current time.
     func getDate(day: DayOfWeek?) -> NSDate {
         let currentDate = NSDate()

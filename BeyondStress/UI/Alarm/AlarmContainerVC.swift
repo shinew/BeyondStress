@@ -24,6 +24,9 @@ class AlarmContainerVC: UITableViewController {
     
     private let TAG = "AlarmContainerVC"
     
+    var editAlarm: Alarm? = nil //used for editing mode
+    var editIndexPath: NSIndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -101,6 +104,16 @@ class AlarmContainerVC: UITableViewController {
         self.indentConstraints.append(indentConstraint)
     }
     
+    //uses self.editIndexPath
+    func updateAlarmCell(alarm: Alarm) {
+        self.alarmContainer.update(self.editIndexPath!.row, newState: alarm)
+        self.cellViews[self.editIndexPath!.row].setReferences(alarm, alarmContainerVC: self)
+        
+        self.editIndexPath = nil
+        self.editAlarm = nil
+        self.settingState = SettingState.Add
+    }
+    
     func removeAlarmCell(indexPath: NSIndexPath) {
         self.alarmContainer.remove(indexPath.row)
         self.cellViews.removeAtIndex(indexPath.row)
@@ -118,14 +131,18 @@ class AlarmContainerVC: UITableViewController {
         self.alarmContainer.update()
     }
     
+    func cancelNewAlarm() {
+        self.editAlarm = nil
+        self.settingState = SettingState.Add
+    }
+    
     func notifyNewAlarm(alarm: Alarm) {
+        alarm.fireDate = NSDate().dateByAddingTimeInterval(5) //hack to ensure this alarm will be enabled upon registering
         if self.settingState == SettingState.Add {
-            alarm.fireDate = NSDate().dateByAddingTimeInterval(5) //hack to ensure this alarm will be enabled upon registering
             self.addAlarmCell(alarm)
         } else if self.settingState == SettingState.Edit {
-            
+            self.updateAlarmCell(alarm)
         }
-        self.settingState = SettingState.Add
     }
     
     /*----------------------OVERRIDE FUNCTIONS----------------------*/
@@ -154,6 +171,8 @@ class AlarmContainerVC: UITableViewController {
             return
         }
         self.settingState = SettingState.Edit
+        self.editAlarm = self.alarmContainer.getAlarmAtIndex(indexPath.row)
+        self.editIndexPath = indexPath
         self.performSegueWithIdentifier("pushCustomization", sender: self)
     }
 }
