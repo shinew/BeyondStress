@@ -12,11 +12,9 @@ struct BreakActivityCounter {
     
     var activity: String
     var counter: Int
-    var userID: Int
     
-    init(activity: String, counter: Int, userID: Int) {
+    init(activity: String, counter: Int) {
         self.activity = activity
         self.counter = counter
-        self.userID = userID
     }
 }

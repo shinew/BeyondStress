@@ -29,6 +29,8 @@ class BreaksViewController: PortraitViewController {
     let activities = ["Walking", "Coffee", "Talking", "Napping", "Music", "Snack"]
     var buttons: [UIButton]!
     
+    private let actionDB = ActionDB()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.buttons = [self.walkingButton, self.coffeeButton, self.talkingButton, self.nappingButton, self.musicButton, self.snackButton]
@@ -39,8 +41,8 @@ class BreaksViewController: PortraitViewController {
         }
         
         for activity in self.activities {
-            //var activityCounter = BreakActivityCounter(activity: activity, counter: 0, userID: User.getUserID())
-//            self.buttonCounters[activity] = Database.getBreakActivityCounter(activityCounter)
+            var activityCounter = BreakActivityCounter(activity: activity, counter: 0)
+            self.buttonCounters[activity] = actionDB.getBreakActivityCounter(activityCounter)
         }
         self.refreshActivityCounters()
     }
@@ -66,7 +68,7 @@ class BreaksViewController: PortraitViewController {
     
     private func incrementActivity(activity: String) {
         self.buttonCounters[activity]!.counter++
-        //Database.updateBreakActivityCounter(self.buttonCounters[activity]!)
+        actionDB.updateBreakActivityCounter(self.buttonCounters[activity]!)
         self.refreshActivityCounters()
     }
     

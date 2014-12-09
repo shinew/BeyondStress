@@ -11,6 +11,7 @@
 		140C3FAC1A36600900DCB36E /* AlarmRepeatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */; };
 		140C3FAF1A36607000DCB36E /* AlarmRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */; };
 		140C3FB11A36735B00DCB36E /* AlarmTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FB01A36735B00DCB36E /* AlarmTextVC.swift */; };
+		140C3FB41A369A8300DCB36E /* ActionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FB31A369A8300DCB36E /* ActionDB.swift */; };
 		145817F61A3442B30070C457 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F51A3442B30070C457 /* Conversion.swift */; };
 		145817F81A3443380070C457 /* BreakActivityCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F71A3443380070C457 /* BreakActivityCounter.swift */; };
 		145817FC1A3444EC0070C457 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817FA1A3444EC0070C457 /* HomeTabBarController.swift */; };
@@ -91,10 +92,11 @@
 		140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlarmRepeatView.xib; path = ../AlarmRepeatView.xib; sourceTree = "<group>"; };
 		140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatView.swift; sourceTree = "<group>"; };
 		140C3FB01A36735B00DCB36E /* AlarmTextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTextVC.swift; sourceTree = "<group>"; };
+		140C3FB31A369A8300DCB36E /* ActionDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDB.swift; sourceTree = "<group>"; };
 		143BD9581A2C676F00243912 /* Univers-LT-67-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-LT-67-Condensed-Bold.ttf"; sourceTree = "<group>"; };
 		143BD9591A2C676F00243912 /* UniversUltraCondensedBQ-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversUltraCondensedBQ-Light.otf"; sourceTree = "<group>"; };
 		145817F51A3442B30070C457 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
-		145817F71A3443380070C457 /* BreakActivityCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakActivityCounter.swift; sourceTree = "<group>"; };
+		145817F71A3443380070C457 /* BreakActivityCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BreakActivityCounter.swift; path = ../BreakActivityCounter.swift; sourceTree = "<group>"; };
 		145817FA1A3444EC0070C457 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		145817FB1A3444EC0070C457 /* PortraitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortraitViewController.swift; sourceTree = "<group>"; };
 		145817FE1A3444FF0070C457 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionsViewController.swift; path = BeyondStress/UI/Action/ActionsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -201,6 +203,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		140C3FB21A369A6800DCB36E /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				140C3FB31A369A8300DCB36E /* ActionDB.swift */,
+				145817F71A3443380070C457 /* BreakActivityCounter.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		145817F21A343F830070C457 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				145818131A34459D0070C457 /* Alarm */,
-				145817F71A3443380070C457 /* BreakActivityCounter.swift */,
+				140C3FB21A369A6800DCB36E /* Action */,
 				145817F51A3442B30070C457 /* Conversion.swift */,
 			);
 			path = Library;
@@ -563,6 +574,7 @@
 				140C3FAF1A36607000DCB36E /* AlarmRepeatView.swift in Sources */,
 				1458181A1A3445B70070C457 /* AlarmContainer.swift in Sources */,
 				14D0A7D31A364339007C3A57 /* AlarmSettingView.swift in Sources */,
+				140C3FB41A369A8300DCB36E /* ActionDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

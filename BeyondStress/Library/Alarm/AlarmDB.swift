@@ -9,9 +9,8 @@
 import UIKit
 import CoreData
 
-private let _global_alarm_queue = dispatch_queue_create("me.getbeyond.alarmQueue", nil)
+let _global_db_queue = dispatch_queue_create("me.getbeyond.dbQueue", nil)
 private var _db_alarmResult = [Alarm]()
-
 
 //interfaces with Core Data to manage alarms
 class AlarmDB {
@@ -22,7 +21,7 @@ class AlarmDB {
     func getAlarms() -> [Alarm] {
         NSLog("(%@) %@", TAG, "retriving alarms from Core Data")
         
-        dispatch_sync(_global_alarm_queue, {
+        dispatch_sync(_global_db_queue, {
             let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
             var request = NSFetchRequest(entityName: "Alarm")
             request.returnsObjectsAsFaults = false
@@ -51,7 +50,7 @@ class AlarmDB {
     func setAlarms(alarms: [Alarm]) {
         NSLog("(%@) %@", TAG, "resetting alarms from Core Data")
         
-        dispatch_sync(_global_alarm_queue, {
+        dispatch_sync(_global_db_queue, {
             let appContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
             var request = NSFetchRequest(entityName: "Alarm")
             request.returnsObjectsAsFaults = false
