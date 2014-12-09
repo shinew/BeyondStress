@@ -225,7 +225,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="251-9f-3J7">
                                 <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
                                 <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="23"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="editingDidEnd:" destination="pXe-pm-gVs" eventType="editingDidEnd" id="X3Z-lg-eLd"/>
                                 </connections>

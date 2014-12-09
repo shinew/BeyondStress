@@ -27,10 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
             UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         }
-        var test = UILocalNotification()
-        test.alertBody = "Hi!"
-        test.fireDate = NSDate().dateByAddingTimeInterval(10)
-        UIApplication.sharedApplication().scheduleLocalNotification(test)
         
         if launchOptions == nil {
             return true

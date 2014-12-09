@@ -32,6 +32,7 @@ class AlarmCellView: UITableViewCell {
     @IBAction func enabledSwitchDidChange(sender: AnyObject) {
         NSLog("(%@) %@", TAG, "alarm has toggled to \(self.enabledSwitch.on)")
         self.alarmContainerVC.updatedAlarmState(self.alarm, enabledState: self.enabledSwitch.on)
+        self.updateView()
     }
     
     func setReferences(alarm: Alarm, alarmContainerVC: AlarmContainerVC) {
@@ -97,10 +98,12 @@ class AlarmCellView: UITableViewCell {
     private func setEnabled(enabled: Bool) {
         if enabled {
             dispatch_async(dispatch_get_main_queue(), {
+                self.backgroundColor = UIColor.whiteColor()
                 self.enabledSwitch.setOn(true, animated: true)
             })
         } else {
             dispatch_async(dispatch_get_main_queue(), {
+                self.backgroundColor = UIColor.lightGrayColor()
                 self.enabledSwitch.setOn(false, animated: true)
             })
         }

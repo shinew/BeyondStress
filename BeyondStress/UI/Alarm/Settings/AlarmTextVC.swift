@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmTextVC: PortraitViewController {
+class AlarmTextVC: PortraitViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     private var alarmSettingVC: AlarmSettingVC!
@@ -18,10 +18,19 @@ class AlarmTextVC: PortraitViewController {
             self.navigationController!.navigationBar.topItem!.title = "Label"
         })
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard:")))
+        self.textField.delegate = self
+        self.textField.becomeFirstResponder()
     }
     
     @objc func dismissKeyboard(recognizer: UITapGestureRecognizer) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.textField.resignFirstResponder()
+        self.editingDidEnd(self)
+        self.returnToAlarmContainerVC()
+        return true
     }
     
     func setDefaultText(text: String, alarmSettingVC: AlarmSettingVC) {
@@ -33,5 +42,9 @@ class AlarmTextVC: PortraitViewController {
     
     @IBAction func editingDidEnd(sender: AnyObject) {
         self.alarmSettingVC.notifyNewText(self.textField.text)
+    }
+    
+    func returnToAlarmContainerVC() {
+        self.navigationController!.popViewControllerAnimated(true)
     }
 }
