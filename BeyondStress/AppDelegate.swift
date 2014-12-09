@@ -27,9 +27,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
             UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         }
+        var test = UILocalNotification()
+        test.alertBody = "Hi!"
+        test.fireDate = NSDate().dateByAddingTimeInterval(10)
+        UIApplication.sharedApplication().scheduleLocalNotification(test)
+        
+        if launchOptions == nil {
+            return true
+        }
+        let notification = launchOptions![UIApplicationLaunchOptionsLocalNotificationKey] as UILocalNotification?
+        if notification == nil {
+            return true
+        }
+        self.openActionTab()
         
         return true
     }
+    
+    func openActionTab() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let actionsTabIndex = 1
+        let tabBarController = self.window!.rootViewController! as UITabBarController
+        //let actionsVC = (tabBarController.viewControllers![actionsTabIndex] as UINavigationController)
+        //actionsVC.popToRootViewControllerAnimated(false)
+        tabBarController.selectedViewController = tabBarController.viewControllers![actionsTabIndex] as? UIViewController
+    }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -56,6 +56,7 @@
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
             <string>Univers-Light-Normal</string>
+            <string>Univers-Light-Normal</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -135,8 +136,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Uk-3n-HHS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0Uk-3n-HHS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="439726874.35300797">
                                     <!--2014-12-08 10:21:14 +0000-->
                                 </date>
@@ -144,12 +145,21 @@
                                     <action selector="timePickerValueChanged:" destination="Vyd-Ub-Pzx" eventType="valueChanged" id="A0d-8b-PW4"/>
                                 </connections>
                             </datePicker>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-wc-nuT">
-                                <rect key="frame" x="0.0" y="308" width="375" height="310"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-wc-nuT">
+                                <rect key="frame" x="0.0" y="246" width="375" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0Uk-3n-HHS" secondAttribute="trailing" id="Qik-tr-ncq"/>
+                            <constraint firstItem="0Uk-3n-HHS" firstAttribute="leading" secondItem="NSt-Ln-tCO" secondAttribute="leading" id="Rqd-kj-Wkw"/>
+                            <constraint firstItem="uzX-wc-nuT" firstAttribute="top" secondItem="0Uk-3n-HHS" secondAttribute="bottom" constant="20" id="Rwk-VX-DsY"/>
+                            <constraint firstAttribute="trailing" secondItem="uzX-wc-nuT" secondAttribute="trailing" id="eCX-zv-j1L"/>
+                            <constraint firstItem="0Uk-3n-HHS" firstAttribute="top" secondItem="MLb-Ug-1vl" secondAttribute="bottom" id="j6z-vk-ifu"/>
+                            <constraint firstItem="6uh-Q0-9wh" firstAttribute="top" secondItem="uzX-wc-nuT" secondAttribute="bottom" id="jo1-b1-ESY"/>
+                            <constraint firstItem="uzX-wc-nuT" firstAttribute="leading" secondItem="NSt-Ln-tCO" secondAttribute="leading" id="nj8-bV-1HY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Nudge" id="xTx-fe-s7G">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YHN-HF-ceX">
@@ -198,7 +208,45 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lp1-IS-rm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2355.5" y="-696.5"/>
+            <point key="canvasLocation" x="2877.5" y="-696.5"/>
+        </scene>
+        <!--Alarm TextVC-->
+        <scene sceneID="vzp-Xm-owp">
+            <objects>
+                <viewController storyboardIdentifier="AlarmTextVC" id="pXe-pm-gVs" customClass="AlarmTextVC" customModule="BeyondStress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="diZ-Qb-fA1"/>
+                        <viewControllerLayoutGuide type="bottom" id="09w-hD-1Sg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8x1-Fd-XWi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="251-9f-3J7">
+                                <rect key="frame" x="0.0" y="318.5" width="375" height="30"/>
+                                <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="23"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editingDidEnd:" destination="pXe-pm-gVs" eventType="editingDidEnd" id="X3Z-lg-eLd"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="251-9f-3J7" secondAttribute="centerY" id="0i6-Ti-BgG"/>
+                            <constraint firstItem="251-9f-3J7" firstAttribute="leading" secondItem="8x1-Fd-XWi" secondAttribute="leading" id="LZn-8C-i6u"/>
+                            <constraint firstAttribute="trailing" secondItem="251-9f-3J7" secondAttribute="trailing" id="NVp-xK-cgK"/>
+                            <constraint firstAttribute="centerX" secondItem="251-9f-3J7" secondAttribute="centerX" id="jdM-ao-zeW"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textField" destination="251-9f-3J7" id="Ldh-nx-GFh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7R-cm-KTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2377.5" y="-696.5"/>
         </scene>
         <!--Actions-->
         <scene sceneID="1hx-DS-4ED">

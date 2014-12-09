@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum SettingState {
+    case Add
+    case Edit
+}
+
 class AlarmContainerVC: UITableViewController {
     
     @IBOutlet weak var editButton: UIBarButtonItem!
@@ -15,6 +20,7 @@ class AlarmContainerVC: UITableViewController {
     private var cellViews = [AlarmCellView]()
     private var alarmContainer = AlarmContainer()
     private var indentConstraints = [NSLayoutConstraint]()
+    private var settingState = SettingState.Add
     
     private let TAG = "AlarmContainerVC"
     
@@ -35,7 +41,7 @@ class AlarmContainerVC: UITableViewController {
         self.tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
         for i in 0 ..< self.alarmContainer.count() {
-            self.addAlarmCell(self.alarmContainer.getAlarmAtIndex(i))
+            self.addInitialAlarmCell(self.alarmContainer.getAlarmAtIndex(i))
         }
     }
     
@@ -77,6 +83,12 @@ class AlarmContainerVC: UITableViewController {
     }
     
     func addAlarmCell(alarm: Alarm) {
+        self.alarmContainer.add(alarm)
+        self.addInitialAlarmCell(alarm)
+    }
+    
+    //does not reschedule for efficiency
+    func addInitialAlarmCell(alarm: Alarm) {
         let contents = NSBundle.mainBundle().loadNibNamed("AlarmCellView", owner: nil, options: nil)
         let newView = contents.last! as AlarmCellView
         newView.selectionStyle = UITableViewCellSelectionStyle.None
@@ -96,11 +108,7 @@ class AlarmContainerVC: UITableViewController {
         self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
     }
     
-    func rowDidTap(indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("pushCustomization", sender: self)
-    }
-    
-    //called by AlarmCellView if enabledSwitch was toggled
+    //called by AlarmCellView if enabledSwitch was toggled (in non-editing mode)
     func updatedAlarmState(alarm: Alarm, enabledState: Bool) {
         if enabledState {
             alarm.enableAlarm()
@@ -108,6 +116,16 @@ class AlarmContainerVC: UITableViewController {
             alarm.disableAlarm()
         }
         self.alarmContainer.update()
+    }
+    
+    func notifyNewAlarm(alarm: Alarm) {
+        if self.settingState == SettingState.Add {
+            alarm.fireDate = NSDate().dateByAddingTimeInterval(5) //hack to ensure this alarm will be enabled upon registering
+            self.addAlarmCell(alarm)
+        } else if self.settingState == SettingState.Edit {
+            
+        }
+        self.settingState = SettingState.Add
     }
     
     /*----------------------OVERRIDE FUNCTIONS----------------------*/
@@ -135,6 +153,7 @@ class AlarmContainerVC: UITableViewController {
         if self.tableView.editing == false {
             return
         }
-        self.rowDidTap(indexPath)
+        self.settingState = SettingState.Edit
+        self.performSegueWithIdentifier("pushCustomization", sender: self)
     }
 }

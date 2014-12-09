@@ -89,7 +89,7 @@ class AlarmContainer {
             alarm.disableIfNecessary(nil)
         }
         
-        self.dbBridge.setAlarms(self.alarms)
         self.notificationBridge.rescheduleAlarms(self.alarms)
+        self.dbBridge.setAlarms(self.alarms)
     }
 }

@@ -35,6 +35,11 @@ class AlarmSettingView: UITableViewCell {
         self.updateView()
     }
     
+    func setText(text: String) {
+        self.descriptionText = text
+        self.updateView()
+    }
+    
     func updateView() {
         if self.key == self.keys[0] {
             let dateText = self.dateAsText()

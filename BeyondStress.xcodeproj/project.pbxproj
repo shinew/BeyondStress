@@ -10,6 +10,7 @@
 		140C3FAA1A365F3400DCB36E /* AlarmRepeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FA91A365F3400DCB36E /* AlarmRepeatVC.swift */; };
 		140C3FAC1A36600900DCB36E /* AlarmRepeatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */; };
 		140C3FAF1A36607000DCB36E /* AlarmRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */; };
+		140C3FB11A36735B00DCB36E /* AlarmTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FB01A36735B00DCB36E /* AlarmTextVC.swift */; };
 		145817F61A3442B30070C457 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F51A3442B30070C457 /* Conversion.swift */; };
 		145817F81A3443380070C457 /* BreakActivityCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F71A3443380070C457 /* BreakActivityCounter.swift */; };
 		145817FC1A3444EC0070C457 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817FA1A3444EC0070C457 /* HomeTabBarController.swift */; };
@@ -89,6 +90,7 @@
 		140C3FA91A365F3400DCB36E /* AlarmRepeatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmRepeatVC.swift; path = ../../../Library/Alarm/AlarmRepeatVC.swift; sourceTree = "<group>"; };
 		140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlarmRepeatView.xib; path = ../AlarmRepeatView.xib; sourceTree = "<group>"; };
 		140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatView.swift; sourceTree = "<group>"; };
+		140C3FB01A36735B00DCB36E /* AlarmTextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTextVC.swift; sourceTree = "<group>"; };
 		143BD9581A2C676F00243912 /* Univers-LT-67-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-LT-67-Condensed-Bold.ttf"; sourceTree = "<group>"; };
 		143BD9591A2C676F00243912 /* UniversUltraCondensedBQ-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversUltraCondensedBQ-Light.otf"; sourceTree = "<group>"; };
 		145817F51A3442B30070C457 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				140C3FA91A365F3400DCB36E /* AlarmRepeatVC.swift */,
 				140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */,
 				140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */,
+				140C3FB01A36735B00DCB36E /* AlarmTextVC.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				145817F81A3443380070C457 /* BreakActivityCounter.swift in Sources */,
 				145818091A3444FF0070C457 /* BreaksViewController.swift in Sources */,
 				14D0E2391A008C6D0042F20A /* BeyondStress.xcdatamodeld in Sources */,
+				140C3FB11A36735B00DCB36E /* AlarmTextVC.swift in Sources */,
 				1458180E1A3444FF0070C457 /* FrustrationViewController.swift in Sources */,
 				145818101A3444FF0070C457 /* ProtocolAnimation.swift in Sources */,
 				145817F61A3442B30070C457 /* Conversion.swift in Sources */,

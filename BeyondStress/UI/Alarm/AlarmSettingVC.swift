@@ -43,6 +43,7 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func saveButtonDidPress(sender: AnyObject) {
+        self.alarmContainerVC.notifyNewAlarm(self.alarm)
         self.returnToAlarmContainerVC()
     }
     
@@ -54,17 +55,15 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     }
     
     func addSettingCell(key: String) {
+    let contents = NSBundle.mainBundle().loadNibNamed("AlarmSettingView", owner: nil, options: nil)
+    let newView = contents.last! as AlarmSettingView
         if key == self.keys[0] {
-            let contents = NSBundle.mainBundle().loadNibNamed("AlarmSettingView", owner: nil, options: nil)
-            let newView = contents.last! as AlarmSettingView
             newView.setKeyDateLabel(key, defaultDate: self.alarm.dates, defaultLabel: nil)
-            self.settingCells.append(newView)
         } else {
-            let contents = NSBundle.mainBundle().loadNibNamed("AlarmSettingView", owner: nil, options: nil)
-            let newView = contents.last! as AlarmSettingView
             newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: "Nudge")
-            self.settingCells.append(newView)
         }
+        self.settingCells.append(newView)
+        newView.selectionStyle = UITableViewCellSelectionStyle.None
     }
     
     func setAlarm(alarm: Alarm) {
@@ -76,6 +75,11 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         self.updateRepeatLabel()
     }
     
+    func notifyNewText(text: String) {
+        self.alarm.text = text
+        self.updateTextLabel()
+    }
+    
     //for edit mode, we want to change the title to "Edit Nudge"
     func switchToAltNavBarTitle() {
         dispatch_async(dispatch_get_main_queue(), {
@@ -83,13 +87,18 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         })
     }
     
-    func returnToAlarmContainerVC() {
-        self.navigationController!.popViewControllerAnimated(true)
-    }
-    
     func updateRepeatLabel() {
         let repeatCell = self.settingCells[0]
         repeatCell.setDate(self.alarm.dates)
+    }
+    
+    func updateTextLabel() {
+        let textCell = self.settingCells[1]
+        textCell.setText(self.alarm.text)
+    }
+    
+    func returnToAlarmContainerVC() {
+        self.navigationController!.popViewControllerAnimated(true)
     }
     
     //overrides
@@ -112,7 +121,10 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
             vc.setAlarmDate(self.alarm.dates, alarmSettingVC: self)
             self.navigationController!.pushViewController(vc, animated: true)
         } else {
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmTextVC") as AlarmTextVC
+            vc.setDefaultText(self.alarm.text, alarmSettingVC: self)
+            self.navigationController!.pushViewController(vc, animated: true)
         }
     }
 }
