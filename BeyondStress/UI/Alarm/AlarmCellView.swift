@@ -24,6 +24,8 @@ class AlarmCellView: UITableViewCell {
     @IBOutlet weak var fridayLabel: UILabel!
     @IBOutlet weak var saturdayLabel: UILabel!
     
+    @IBOutlet weak var rightArrowView: UIImageView!
+    
     private let TAG = "AlarmCellView"
     
     private var alarm: Alarm!

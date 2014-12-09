@@ -91,9 +91,17 @@
                         <action selector="enabledSwitchDidChange:" destination="iN0-l3-epB" eventType="valueChanged" id="U4p-p3-RyI"/>
                     </connections>
                 </switch>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editCell-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Xo-O0c">
+                    <rect key="frame" x="576" y="18" width="12" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="4x5-zo-WCu"/>
+                        <constraint firstAttribute="height" constant="20" id="oht-rU-1DN"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="rBa-Xo-O0c" firstAttribute="trailing" secondItem="3Ga-Np-qz0" secondAttribute="trailing" id="35O-fE-aiV"/>
                 <constraint firstItem="H3L-Yc-XQo" firstAttribute="leading" secondItem="rhi-aP-myp" secondAttribute="leading" id="3xu-SL-8SJ"/>
                 <constraint firstItem="1fu-yB-7bf" firstAttribute="centerY" secondItem="XSq-zX-R5T" secondAttribute="centerY" id="5Nb-7x-4Z7"/>
                 <constraint firstItem="x1i-ml-yjS" firstAttribute="leading" secondItem="rbB-Qe-eGI" secondAttribute="trailing" constant="8" id="9SY-o4-xeX"/>
@@ -113,6 +121,7 @@
                 <constraint firstItem="XSq-zX-R5T" firstAttribute="leading" secondItem="1fu-yB-7bf" secondAttribute="trailing" constant="8" id="kP0-3Z-7Ak"/>
                 <constraint firstItem="rbB-Qe-eGI" firstAttribute="centerY" secondItem="x1i-ml-yjS" secondAttribute="centerY" id="nrC-iv-pta"/>
                 <constraint firstItem="z71-YA-ORb" firstAttribute="centerY" secondItem="XSq-zX-R5T" secondAttribute="centerY" id="qEg-EN-2sH"/>
+                <constraint firstItem="rBa-Xo-O0c" firstAttribute="centerY" secondItem="3Ga-Np-qz0" secondAttribute="centerY" id="tOW-TW-4BB"/>
                 <constraint firstItem="z71-YA-ORb" firstAttribute="leading" secondItem="XSq-zX-R5T" secondAttribute="trailing" constant="8" id="wlR-W8-9pf"/>
                 <constraint firstItem="x1i-ml-yjS" firstAttribute="centerY" secondItem="1fu-yB-7bf" secondAttribute="centerY" id="xm5-Xe-5od"/>
                 <constraint firstItem="T89-8x-3AW" firstAttribute="leading" secondItem="Olh-AH-vZp" secondAttribute="trailing" constant="8" id="zbv-Yp-VmG"/>
@@ -123,6 +132,7 @@
                 <outlet property="enabledSwitch" destination="3Ga-Np-qz0" id="eqO-z3-opy"/>
                 <outlet property="fridayLabel" destination="Olh-AH-vZp" id="aix-4b-pCG"/>
                 <outlet property="mondayLabel" destination="x1i-ml-yjS" id="Bus-XL-mkX"/>
+                <outlet property="rightArrowView" destination="rBa-Xo-O0c" id="Dso-dh-BjQ"/>
                 <outlet property="saturdayLabel" destination="T89-8x-3AW" id="P0O-fl-40R"/>
                 <outlet property="sundayLabel" destination="rbB-Qe-eGI" id="p3O-IA-cJC"/>
                 <outlet property="thursdayLabel" destination="z71-YA-ORb" id="obO-WF-jPK"/>
@@ -133,4 +143,7 @@
             <point key="canvasLocation" x="353" y="257"/>
         </view>
     </objects>
+    <resources>
+        <image name="editCell-icon" width="4" height="7"/>
+    </resources>
 </document>

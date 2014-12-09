@@ -75,11 +75,13 @@ class AlarmContainerVC: UITableViewController {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.cellViews[i].addConstraint(self.indentConstraints[i])
                     self.cellViews[i].enabledSwitch.hidden = true
+                    self.cellViews[i].rightArrowView.hidden = false
                 })
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.cellViews[i].removeConstraint(self.indentConstraints[i])
                     self.cellViews[i].enabledSwitch.hidden = false
+                    self.cellViews[i].rightArrowView.hidden = true
                 })
             }
         }
