@@ -77,6 +77,7 @@
 		1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DA1A07112F008509FE /* DesignableView.swift */; };
 		1AB847E01A07112F008509FE /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DB1A07112F008509FE /* Misc.swift */; };
 		1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB847DC1A07112F008509FE /* SpringAnimation.swift */; };
+		3C769B5B8CCB911FD60DAF54 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5D05A80538CCA7ED6EF9AE /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140724671A384759009A90E1 /* BeyondStress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeyondStress-Bridging-Header.h"; sourceTree = "<group>"; };
 		140C3FA91A365F3400DCB36E /* AlarmRepeatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmRepeatVC.swift; path = ../../../Library/Alarm/AlarmRepeatVC.swift; sourceTree = "<group>"; };
 		140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlarmRepeatView.xib; path = ../AlarmRepeatView.xib; sourceTree = "<group>"; };
 		140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,9 @@
 		1AB847DA1A07112F008509FE /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		1AB847DB1A07112F008509FE /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
 		1AB847DC1A07112F008509FE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		8A5D05A80538CCA7ED6EF9AE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		959E15B9D19CED669B4618E5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CB6497A48CF86B19D29B64AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,7 @@
 				14FBC1291A14C03300BD6B15 /* CoreGraphics.framework in Frameworks */,
 				14FBC1271A14C02D00BD6B15 /* CoreText.framework in Frameworks */,
 				14FBC1251A14C02800BD6B15 /* AssetsLibrary.framework in Frameworks */,
+				3C769B5B8CCB911FD60DAF54 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +225,7 @@
 		145817F21A343F830070C457 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				140724671A384759009A90E1 /* BeyondStress-Bridging-Header.h */,
 				14FBC11B1A14BFF000BD6B15 /* Vendor */,
 				1A28C9F91A060CB000678084 /* Fonts */,
 				1A5347D71A07896C00CE742E /* LaunchImages */,
@@ -301,6 +308,8 @@
 				14D0E2321A008C6D0042F20A /* BeyondStress */,
 				145817F21A343F830070C457 /* Misc */,
 				14D0E2311A008C6D0042F20A /* Products */,
+				C7FB82752C79911C108CF775 /* Pods */,
+				749380CE3EBEC2B00D4C0F98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -422,6 +431,23 @@
 			path = Spring;
 			sourceTree = "<group>";
 		};
+		749380CE3EBEC2B00D4C0F98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A5D05A80538CCA7ED6EF9AE /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7FB82752C79911C108CF775 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				959E15B9D19CED669B4618E5 /* Pods.debug.xcconfig */,
+				CB6497A48CF86B19D29B64AC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,9 +455,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14D0E2521A008C6D0042F20A /* Build configuration list for PBXNativeTarget "BeyondStress" */;
 			buildPhases = (
+				E63D5543212D5D579D98160A /* Check Pods Manifest.lock */,
 				14D0E22C1A008C6D0042F20A /* Sources */,
 				14D0E22D1A008C6D0042F20A /* Frameworks */,
 				14D0E22E1A008C6D0042F20A /* Resources */,
+				964E75D1B7A0087D47B330F0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -542,6 +570,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		964E75D1B7A0087D47B330F0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E63D5543212D5D579D98160A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14D0E22C1A008C6D0042F20A /* Sources */ = {
@@ -696,6 +757,7 @@
 		};
 		14D0E2531A008C6D0042F20A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 959E15B9D19CED669B4618E5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
@@ -713,8 +775,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = BeyondStress;
 				PROVISIONING_PROFILE = "";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Misc/BeyondStress-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -722,6 +784,7 @@
 		};
 		14D0E2541A008C6D0042F20A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6497A48CF86B19D29B64AC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
@@ -739,8 +802,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = BeyondStress;
 				PROVISIONING_PROFILE = "";
-				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Misc/BeyondStress-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

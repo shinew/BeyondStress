@@ -14,10 +14,18 @@ import HockeySDK
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    //The "secret" token for Mixpanel
+    private let MIXPANEL_TOKEN = "42d6fa4f1724bf216fc88b9df94a638d"
+    
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Mixpanel
+        Mixpanel.sharedInstanceWithToken(MIXPANEL_TOKEN)
+        let mixPanel = Mixpanel.sharedInstance()
+        mixPanel.track("App opened")
         
         //Setting notification permissions
         if UIDevice.currentDevice().systemVersion >= "8" {
