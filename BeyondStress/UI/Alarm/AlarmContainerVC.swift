@@ -31,7 +31,6 @@ class AlarmContainerVC: UITableViewController {
         super.viewDidLoad()
         
         //TESTING CODE
-        //self.alarmContainer.add(Alarm(text: "what", minute: 23, hour: 18, enabled: true, repeat: false, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(), index: -1))
         //self.alarmContainer.add(Alarm(text: "", minute: 2, hour: 3, enabled: true, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate(day: DayOfWeek.Friday), index: -1))
         //END TESTING CODE
         
@@ -43,6 +42,8 @@ class AlarmContainerVC: UITableViewController {
         //remove extra separators for non-existing cells
         self.tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
+        self.addDefaultAlarms()
+        
         for i in 0 ..< self.alarmContainer.count() {
             self.addInitialAlarmCell(self.alarmContainer.getAlarmAtIndex(i))
         }
@@ -51,6 +52,19 @@ class AlarmContainerVC: UITableViewController {
     @IBAction func editButtonDidPress(sender: AnyObject) {
         NSLog("(%@) %@", TAG, "Pressed edit button")
         self.editToggleViewUpdate()
+    }
+    
+    private func addDefaultAlarms() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.boolForKey("addedDefaultAlarms") {
+            return
+        }
+        
+        self.alarmContainer.add(Alarm(text: "Pre-work focus", minute: 30, hour: 8, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "Hey, let's take a moment to focus before work."))
+        self.alarmContainer.add(Alarm(text: "After lunch", minute: 0, hour: 13, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "Take a breather after the lunch-break?"))
+        self.alarmContainer.add(Alarm(text: "Night", minute: 0, hour: 19, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "Let's take a moment to be calm for family time."))
+        
+        userDefaults.setBool(true, forKey: "addedDefaultAlarms")
     }
     
     func editToggleViewUpdate() {

@@ -14,7 +14,7 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     private let TAG = "AlarmSettingVC"
-    private let keys = ["Repeat", "Label", "Message"]
+    private let keys = ["Repeat", "Description", "Message"]
     private var settingCells = [AlarmSettingView]()
     private var deleteCell: AlarmDeleteView!
     private var settingState = SettingState.Add
@@ -28,6 +28,11 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         
         if (self.alarmContainerVC.settingState == SettingState.Edit) {
             self.settingState = SettingState.Edit
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.navigationController!.navigationBar.topItem!.title = "Edit Nudge"
+            })
+            
             self.alarm = self.alarmContainerVC.editAlarm!.copy()
             //we need a delete alarm cell if so
             let contents = NSBundle.mainBundle().loadNibNamed("AlarmDeleteView", owner: nil, options: nil)
@@ -81,7 +86,7 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         switch key {
         case "Repeat":
             newView.setKeyDateLabel(key, defaultDate: self.alarm.dates, defaultLabel: nil)
-        case "Label":
+        case "Description":
             newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: self.alarm.text)
         case "Message":
             newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: self.alarm.message)
@@ -103,7 +108,7 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     }
     
     func notifyNewText(key: String, text: String) {
-        if key == "Label" {
+        if key == "Description" {
             self.alarm.text = text
             self.updateTextLabel()
         } else if key == "Message" {
@@ -173,13 +178,13 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
                 vc.setAlarmDate(self.alarm.dates, alarmSettingVC: self)
                 self.navigationController!.pushViewController(vc, animated: true)
             } else if indexPath.row == 1 {
-                //pressed "Label"
+                //pressed "Description"
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmTextVC") as AlarmTextVC
-                vc.setDefaultText("Label", text: self.alarm.text, alarmSettingVC: self)
+                vc.setDefaultText("Description", text: self.alarm.text, alarmSettingVC: self)
                 self.navigationController!.pushViewController(vc, animated: true)
             } else {
-                //pressed "Label"
+                //pressed "Message"
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmTextVC") as AlarmTextVC
                 vc.setDefaultText("Message", text: self.alarm.message, alarmSettingVC: self)
@@ -190,5 +195,13 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
             self.alarmContainerVC.notifyDeleteAlarm()
             self.returnToAlarmContainerVC()
         }
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect.zeroRect)
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect.zeroRect)
     }
 }

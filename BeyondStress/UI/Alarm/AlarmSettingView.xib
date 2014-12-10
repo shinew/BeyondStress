@@ -18,23 +18,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5g-Zb-i9H">
-                    <rect key="frame" x="12" y="288.5" width="38.5" height="23"/>
-                    <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="23"/>
+                    <rect key="frame" x="12" y="290" width="32" height="19"/>
+                    <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="19"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon" translatesAutoresizingMaskIntoConstraints="NO" id="AuW-Vh-gOc">
+                    <rect key="frame" x="579" y="292" width="9" height="16"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fW-jI-b7l">
-                    <rect key="frame" x="533" y="288" width="55" height="23"/>
-                    <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="23"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <rect key="frame" x="525" y="290" width="45.5" height="19"/>
+                    <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="19"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerY" secondItem="3fW-jI-b7l" secondAttribute="centerY" id="KMB-Bm-ydc"/>
+                <constraint firstItem="AuW-Vh-gOc" firstAttribute="leading" secondItem="3fW-jI-b7l" secondAttribute="trailing" constant="8" id="Mjh-HE-H57"/>
+                <constraint firstAttribute="trailing" secondItem="AuW-Vh-gOc" secondAttribute="trailing" constant="12" id="PK6-PC-vxS"/>
                 <constraint firstItem="3fW-jI-b7l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v5g-Zb-i9H" secondAttribute="trailing" constant="8" id="VEP-1P-cPE"/>
-                <constraint firstAttribute="trailing" secondItem="3fW-jI-b7l" secondAttribute="trailing" constant="12" id="Yly-qy-K7b"/>
+                <constraint firstAttribute="centerY" secondItem="AuW-Vh-gOc" secondAttribute="centerY" id="VlG-oz-e9w"/>
                 <constraint firstItem="v5g-Zb-i9H" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="epb-bQ-Ytt"/>
                 <constraint firstAttribute="centerY" secondItem="v5g-Zb-i9H" secondAttribute="centerY" id="pFF-hQ-ewn"/>
             </constraints>
@@ -44,4 +49,7 @@
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="disclosure-icon" width="9" height="16"/>
+    </resources>
 </document>

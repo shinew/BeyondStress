@@ -46,6 +46,10 @@ class AlarmDate {
         self.days |= day.rawValue
     }
     
+    func remove(day: DayOfWeek) {
+        self.days &= (~day.rawValue)
+    }
+    
     func contains(day: DayOfWeek) -> Bool {
         return (self.days & day.rawValue) != 0
     }
@@ -84,6 +88,24 @@ class AlarmDate {
     
     class func getDayOfWeek(index: Int) -> DayOfWeek {
         return DayOfWeek.allValues[index]
+    }
+    
+    class func getAllDays() -> AlarmDate {
+        let date = AlarmDate()
+        for day in DayOfWeek.allValues {
+            date.add(day)
+        }
+        return date
+    }
+    
+    class func getWeekdays() -> AlarmDate {
+        let date = AlarmDate()
+        for day in DayOfWeek.allValues {
+            date.add(day)
+        }
+        date.remove(DayOfWeek.Saturday)
+        date.remove(DayOfWeek.Sunday)
+        return date
     }
     
     func getRaw() -> Int {

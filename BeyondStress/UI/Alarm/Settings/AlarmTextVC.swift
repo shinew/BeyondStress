@@ -16,15 +16,10 @@ class AlarmTextVC: PortraitViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         dispatch_async(dispatch_get_main_queue(), {
-            self.navigationController!.navigationBar.topItem!.title = "Label"
+            self.textField.clearButtonMode = UITextFieldViewMode.WhileEditing
         })
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("dismissKeyboard:")))
         self.textField.delegate = self
         self.textField.becomeFirstResponder()
-    }
-    
-    @objc func dismissKeyboard(recognizer: UITapGestureRecognizer) {
-        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -36,6 +31,9 @@ class AlarmTextVC: PortraitViewController, UITextFieldDelegate {
     
     func setDefaultText(key: String, text: String, alarmSettingVC: AlarmSettingVC) {
         self.key = key
+        dispatch_async(dispatch_get_main_queue(), {
+            self.navigationController!.navigationBar.topItem!.title = key
+        })
         self.alarmSettingVC = alarmSettingVC
         dispatch_async(dispatch_get_main_queue(), {
             self.textField.text = text

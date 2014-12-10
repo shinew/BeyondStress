@@ -85,11 +85,11 @@
                         <action selector="enabledSwitchDidChange:" destination="iN0-l3-epB" eventType="valueChanged" id="U4p-p3-RyI"/>
                     </connections>
                 </switch>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="disclosure-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Xo-O0c">
-                    <rect key="frame" x="575" y="12" width="17" height="31"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Xo-O0c">
+                    <rect key="frame" x="579" y="19.5" width="9" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="17" id="4x5-zo-WCu"/>
-                        <constraint firstAttribute="height" constant="31" id="oht-rU-1DN"/>
+                        <constraint firstAttribute="width" constant="9" id="4x5-zo-WCu"/>
+                        <constraint firstAttribute="height" constant="16" id="oht-rU-1DN"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-Gt-BpK">
