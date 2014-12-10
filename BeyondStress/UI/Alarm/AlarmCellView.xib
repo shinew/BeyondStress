@@ -26,74 +26,74 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3L-Yc-XQo">
-                    <rect key="frame" x="12" y="12" width="68" height="35"/>
-                    <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="35"/>
+                    <rect key="frame" x="12" y="12" width="97" height="50"/>
+                    <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="50"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhi-aP-myp">
-                    <rect key="frame" x="12" y="51" width="85.5" height="17"/>
+                    <rect key="frame" x="19" y="62" width="85.5" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbB-Qe-eGI">
-                    <rect key="frame" x="456" y="51" width="10.5" height="17"/>
+                    <rect key="frame" x="456" y="60.5" width="10.5" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="M" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1i-ml-yjS">
-                    <rect key="frame" x="475" y="51" width="16" height="17"/>
+                    <rect key="frame" x="475" y="60.5" width="16" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fu-yB-7bf">
-                    <rect key="frame" x="499" y="51" width="9.5" height="17"/>
+                    <rect key="frame" x="499" y="60.5" width="9.5" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSq-zX-R5T">
-                    <rect key="frame" x="516" y="51" width="17" height="17"/>
+                    <rect key="frame" x="516" y="60.5" width="17" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z71-YA-ORb">
-                    <rect key="frame" x="541" y="51" width="9.5" height="17"/>
+                    <rect key="frame" x="541" y="60.5" width="9.5" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olh-AH-vZp">
-                    <rect key="frame" x="559" y="51" width="9.5" height="17"/>
+                    <rect key="frame" x="559" y="60.5" width="9.5" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T89-8x-3AW">
-                    <rect key="frame" x="577" y="51" width="10.5" height="17"/>
+                    <rect key="frame" x="577" y="60.5" width="10.5" height="17"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ga-Np-qz0">
-                    <rect key="frame" x="539" y="12" width="51" height="31"/>
+                    <rect key="frame" x="539" y="20" width="51" height="31"/>
                     <connections>
                         <action selector="enabledSwitchDidChange:" destination="iN0-l3-epB" eventType="valueChanged" id="U4p-p3-RyI"/>
                     </connections>
                 </switch>
                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disclosure-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Xo-O0c">
-                    <rect key="frame" x="579" y="19.5" width="9" height="16"/>
+                    <rect key="frame" x="579" y="27" width="9" height="16"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="9" id="4x5-zo-WCu"/>
                         <constraint firstAttribute="height" constant="16" id="oht-rU-1DN"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Sm-Gt-BpK">
-                    <rect key="frame" x="88" y="22" width="32" height="23"/>
+                    <rect key="frame" x="115" y="34" width="32" height="23"/>
                     <fontDescription key="fontDescription" name="Univers-Light-Normal" family="Univers-Light-Normal" pointSize="23"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -102,19 +102,15 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rBa-Xo-O0c" firstAttribute="trailing" secondItem="3Ga-Np-qz0" secondAttribute="trailing" id="35O-fE-aiV"/>
-                <constraint firstItem="H3L-Yc-XQo" firstAttribute="leading" secondItem="rhi-aP-myp" secondAttribute="leading" id="3xu-SL-8SJ"/>
                 <constraint firstItem="1fu-yB-7bf" firstAttribute="centerY" secondItem="XSq-zX-R5T" secondAttribute="centerY" id="5Nb-7x-4Z7"/>
                 <constraint firstItem="x1i-ml-yjS" firstAttribute="leading" secondItem="rbB-Qe-eGI" secondAttribute="trailing" constant="8" id="9SY-o4-xeX"/>
                 <constraint firstItem="rbB-Qe-eGI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rhi-aP-myp" secondAttribute="trailing" constant="8" id="DLY-xl-8vZ"/>
                 <constraint firstItem="Olh-AH-vZp" firstAttribute="centerY" secondItem="z71-YA-ORb" secondAttribute="centerY" id="HFh-pZ-QJv"/>
-                <constraint firstItem="3Ga-Np-qz0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="JRM-4e-TND"/>
-                <constraint firstItem="rbB-Qe-eGI" firstAttribute="bottom" secondItem="rhi-aP-myp" secondAttribute="bottom" id="JSI-0m-lzo"/>
-                <constraint firstItem="8Sm-Gt-BpK" firstAttribute="bottom" secondItem="H3L-Yc-XQo" secondAttribute="bottom" constant="-2" id="KnY-Q6-jFW"/>
+                <constraint firstItem="rhi-aP-myp" firstAttribute="centerY" secondItem="rbB-Qe-eGI" secondAttribute="centerY" id="J7L-Ay-oAK"/>
+                <constraint firstItem="8Sm-Gt-BpK" firstAttribute="leading" secondItem="H3L-Yc-XQo" secondAttribute="trailing" constant="6" id="KRg-8E-KOu"/>
                 <constraint firstItem="Olh-AH-vZp" firstAttribute="centerY" secondItem="T89-8x-3AW" secondAttribute="centerY" id="Nmu-2X-eXy"/>
-                <constraint firstItem="H3L-Yc-XQo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="PLU-Fy-9QS"/>
-                <constraint firstItem="8Sm-Gt-BpK" firstAttribute="leading" secondItem="H3L-Yc-XQo" secondAttribute="trailing" constant="8" id="Yyp-AD-HMM"/>
+                <constraint firstItem="3Ga-Np-qz0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="PBj-FE-LRb"/>
                 <constraint firstItem="Olh-AH-vZp" firstAttribute="leading" secondItem="z71-YA-ORb" secondAttribute="trailing" constant="8" id="a90-z3-pg7"/>
-                <constraint firstItem="T89-8x-3AW" firstAttribute="top" secondItem="3Ga-Np-qz0" secondAttribute="bottom" constant="8" id="byT-Pj-eg1"/>
                 <constraint firstAttribute="trailing" secondItem="3Ga-Np-qz0" secondAttribute="trailing" constant="12" id="dID-qP-NgA"/>
                 <constraint firstItem="3Ga-Np-qz0" firstAttribute="trailing" secondItem="T89-8x-3AW" secondAttribute="trailing" id="hMl-qt-qUz"/>
                 <constraint firstItem="1fu-yB-7bf" firstAttribute="leading" secondItem="x1i-ml-yjS" secondAttribute="trailing" constant="8" id="ju1-i5-h0f"/>
@@ -122,8 +118,12 @@
                 <constraint firstItem="rbB-Qe-eGI" firstAttribute="centerY" secondItem="x1i-ml-yjS" secondAttribute="centerY" id="nrC-iv-pta"/>
                 <constraint firstItem="z71-YA-ORb" firstAttribute="centerY" secondItem="XSq-zX-R5T" secondAttribute="centerY" id="qEg-EN-2sH"/>
                 <constraint firstItem="rBa-Xo-O0c" firstAttribute="centerY" secondItem="3Ga-Np-qz0" secondAttribute="centerY" id="tOW-TW-4BB"/>
+                <constraint firstItem="rhi-aP-myp" firstAttribute="top" secondItem="H3L-Yc-XQo" secondAttribute="bottom" id="vEW-Ui-7gi"/>
+                <constraint firstItem="H3L-Yc-XQo" firstAttribute="bottom" secondItem="8Sm-Gt-BpK" secondAttribute="bottom" constant="5" id="wL0-9Z-ytj"/>
                 <constraint firstItem="z71-YA-ORb" firstAttribute="leading" secondItem="XSq-zX-R5T" secondAttribute="trailing" constant="8" id="wlR-W8-9pf"/>
+                <constraint firstItem="H3L-Yc-XQo" firstAttribute="centerY" secondItem="3Ga-Np-qz0" secondAttribute="centerY" id="xAS-iM-kHo"/>
                 <constraint firstItem="x1i-ml-yjS" firstAttribute="centerY" secondItem="1fu-yB-7bf" secondAttribute="centerY" id="xm5-Xe-5od"/>
+                <constraint firstItem="rhi-aP-myp" firstAttribute="leading" secondItem="H3L-Yc-XQo" secondAttribute="leading" id="zAj-GJ-wX5"/>
                 <constraint firstItem="T89-8x-3AW" firstAttribute="leading" secondItem="Olh-AH-vZp" secondAttribute="trailing" constant="8" id="zbv-Yp-VmG"/>
             </constraints>
             <connections>

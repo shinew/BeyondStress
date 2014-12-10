@@ -20,6 +20,7 @@ class AlarmContainerVC: UITableViewController {
     private var cellViews = [AlarmCellView]()
     private var alarmContainer = AlarmContainer()
     private var indentConstraints = [NSLayoutConstraint]()
+    private var unindentConstraints = [NSLayoutConstraint]()
     
     private let TAG = "AlarmContainerVC"
     
@@ -38,7 +39,7 @@ class AlarmContainerVC: UITableViewController {
         if self.navigationController != nil {
             self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Univers-Light-Bold", size: 18)!]
         }
-        self.tableView.rowHeight = 80
+        self.tableView.rowHeight = 95
         //remove extra separators for non-existing cells
         self.tableView.tableFooterView = UIView(frame: CGRect.zeroRect)
         
@@ -47,6 +48,7 @@ class AlarmContainerVC: UITableViewController {
         for i in 0 ..< self.alarmContainer.count() {
             self.addInitialAlarmCell(self.alarmContainer.getAlarmAtIndex(i))
         }
+        self.reindentRows()
     }
     
     @IBAction func editButtonDidPress(sender: AnyObject) {
@@ -87,6 +89,7 @@ class AlarmContainerVC: UITableViewController {
         for i in 0 ..< self.cellViews.count {
             if self.tableView.editing {
                 dispatch_async(dispatch_get_main_queue(), {
+                    self.cellViews[i].removeConstraint(self.unindentConstraints[i])
                     self.cellViews[i].addConstraint(self.indentConstraints[i])
                     self.cellViews[i].enabledSwitch.hidden = true
                     self.cellViews[i].rightArrowView.hidden = false
@@ -94,6 +97,7 @@ class AlarmContainerVC: UITableViewController {
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
                     self.cellViews[i].removeConstraint(self.indentConstraints[i])
+                    self.cellViews[i].addConstraint(self.unindentConstraints[i])
                     self.cellViews[i].enabledSwitch.hidden = false
                     self.cellViews[i].rightArrowView.hidden = true
                 })
@@ -117,7 +121,9 @@ class AlarmContainerVC: UITableViewController {
         
         //add indentation logic
         let indentConstraint = NSLayoutConstraint(item: newView.timeLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: newView, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 45.0)
+        let unindentConstraint = NSLayoutConstraint(item: newView.timeLabel, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: newView, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 16.0)
         self.indentConstraints.append(indentConstraint)
+        self.unindentConstraints.append(unindentConstraint)
     }
     
     //uses self.editIndexPath
@@ -130,6 +136,7 @@ class AlarmContainerVC: UITableViewController {
         self.alarmContainer.remove(indexPath.row)
         self.cellViews.removeAtIndex(indexPath.row)
         self.indentConstraints.removeAtIndex(indexPath.row)
+        self.unindentConstraints.removeAtIndex(indexPath.row)
         self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
     }
     
