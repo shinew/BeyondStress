@@ -91,11 +91,11 @@
                         <action selector="enabledSwitchDidChange:" destination="iN0-l3-epB" eventType="valueChanged" id="U4p-p3-RyI"/>
                     </connections>
                 </switch>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editCell-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Xo-O0c">
-                    <rect key="frame" x="576" y="18" width="12" height="20"/>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="disclosure-icon" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Xo-O0c">
+                    <rect key="frame" x="575" y="12" width="17" height="31"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="12" id="4x5-zo-WCu"/>
-                        <constraint firstAttribute="height" constant="20" id="oht-rU-1DN"/>
+                        <constraint firstAttribute="width" constant="17" id="4x5-zo-WCu"/>
+                        <constraint firstAttribute="height" constant="31" id="oht-rU-1DN"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -144,6 +144,6 @@
         </view>
     </objects>
     <resources>
-        <image name="editCell-icon" width="4" height="7"/>
+        <image name="disclosure-icon" width="9" height="16"/>
     </resources>
 </document>

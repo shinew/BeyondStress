@@ -20,10 +20,10 @@ class AlarmContainerVC: UITableViewController {
     private var cellViews = [AlarmCellView]()
     private var alarmContainer = AlarmContainer()
     private var indentConstraints = [NSLayoutConstraint]()
-    private var settingState = SettingState.Add
     
     private let TAG = "AlarmContainerVC"
     
+    var settingState = SettingState.Add
     var editAlarm: Alarm? = nil //used for editing mode
     var editIndexPath: NSIndexPath?
     
@@ -50,10 +50,10 @@ class AlarmContainerVC: UITableViewController {
     
     @IBAction func editButtonDidPress(sender: AnyObject) {
         NSLog("(%@) %@", TAG, "Pressed edit button")
-        self.editViewUpdate()
+        self.editToggleViewUpdate()
     }
     
-    func editViewUpdate() {
+    func editToggleViewUpdate() {
         if self.tableView.editing {
             dispatch_async(dispatch_get_main_queue(), {
                 self.editButton.title = "Edit"
@@ -110,10 +110,6 @@ class AlarmContainerVC: UITableViewController {
     func updateAlarmCell(alarm: Alarm) {
         self.alarmContainer.update(self.editIndexPath!.row, newState: alarm)
         self.cellViews[self.editIndexPath!.row].setReferences(alarm, alarmContainerVC: self)
-        
-        self.editIndexPath = nil
-        self.editAlarm = nil
-        self.settingState = SettingState.Add
     }
     
     func removeAlarmCell(indexPath: NSIndexPath) {
@@ -134,8 +130,9 @@ class AlarmContainerVC: UITableViewController {
     }
     
     func cancelNewAlarm() {
-        self.editAlarm = nil
-        self.settingState = SettingState.Add
+        if self.settingState == SettingState.Edit {
+            self.resetEditState()
+        }
     }
     
     func notifyNewAlarm(alarm: Alarm) {
@@ -144,6 +141,21 @@ class AlarmContainerVC: UITableViewController {
             self.addAlarmCell(alarm)
         } else if self.settingState == SettingState.Edit {
             self.updateAlarmCell(alarm)
+            self.resetEditState()
+        }
+    }
+    
+    func notifyDeleteAlarm() {
+        self.removeAlarmCell(self.editIndexPath!)
+        self.resetEditState()
+    }
+    
+    func resetEditState() {
+        self.editIndexPath = nil
+        self.editAlarm = nil
+        self.settingState = SettingState.Add
+        if self.tableView.editing == true {
+            self.editToggleViewUpdate()
         }
     }
     

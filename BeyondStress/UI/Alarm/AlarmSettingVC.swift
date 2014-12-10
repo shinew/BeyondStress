@@ -16,6 +16,8 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     private let TAG = "AlarmSettingVC"
     private let keys = ["Repeat", "Label"]
     private var settingCells = [AlarmSettingView]()
+    private var deleteCell: AlarmDeleteView!
+    private var settingState = SettingState.Add
     
     private var alarmContainerVC: AlarmContainerVC!
     private var alarm: Alarm!
@@ -24,16 +26,22 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         self.alarmContainerVC = self.navigationController!.viewControllers[0] as AlarmContainerVC
         
-        let time = Conversion.dateToHourMinute(self.timePicker.date)
-        
-        let possibleAlarm = self.alarmContainerVC.editAlarm
-        
-        if (possibleAlarm != nil) {
-            self.alarm = possibleAlarm!.copy()
+        if (self.alarmContainerVC.settingState == SettingState.Edit) {
+            self.settingState = SettingState.Edit
+            self.alarm = self.alarmContainerVC.editAlarm!.copy()
+            //we need a delete alarm cell if so
+            let contents = NSBundle.mainBundle().loadNibNamed("AlarmDeleteView", owner: nil, options: nil)
+            let newView = contents.last! as AlarmDeleteView
+            newView.selectionStyle = UITableViewCellSelectionStyle.None
+            self.deleteCell = newView
         } else {
+            self.settingState = SettingState.Add
+            //instantiate new alarm with current time
+            let time = Conversion.dateToHourMinute(self.timePicker.date)
             self.alarm = Alarm(text: "Nudge", minute: time.1, hour: time.0, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 0)
         }
         
+        //set the timer to the alarm date
         let newDate = Conversion.hourMinuteToDate(self.alarm.hour, minute: self.alarm.minute)
         dispatch_async(dispatch_get_main_queue(), {
             self.timePicker.setDate(newDate, animated: false)
@@ -75,8 +83,8 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         } else {
             newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: self.alarm.text)
         }
-        self.settingCells.append(newView)
         newView.selectionStyle = UITableViewCellSelectionStyle.None
+        self.settingCells.append(newView)
     }
     
     func notifyNewDate(date: AlarmDate) {
@@ -117,28 +125,48 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     
     //overrides
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if self.settingState == SettingState.Add {
+            return 1
+        } else {
+            return 2
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if section == 0 {
+            return 2
+        } else {
+            return 1
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return self.settingCells[indexPath.row]
+        if indexPath.section == 0 {
+            return self.settingCells[indexPath.row]
+        } else {
+            return self.deleteCell
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 0 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmRepeatVC") as AlarmRepeatVC
-            vc.setAlarmDate(self.alarm.dates, alarmSettingVC: self)
-            self.navigationController!.pushViewController(vc, animated: true)
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                //pressed "Repeat"
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmRepeatVC") as AlarmRepeatVC
+                vc.setAlarmDate(self.alarm.dates, alarmSettingVC: self)
+                self.navigationController!.pushViewController(vc, animated: true)
+            } else {
+                //pressed "Label"
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmTextVC") as AlarmTextVC
+                vc.setDefaultText(self.alarm.text, alarmSettingVC: self)
+                self.navigationController!.pushViewController(vc, animated: true)
+            }
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmTextVC") as AlarmTextVC
-            vc.setDefaultText(self.alarm.text, alarmSettingVC: self)
-            self.navigationController!.pushViewController(vc, animated: true)
+            //pressed "Delete"
+            self.alarmContainerVC.notifyDeleteAlarm()
+            self.returnToAlarmContainerVC()
         }
     }
 }

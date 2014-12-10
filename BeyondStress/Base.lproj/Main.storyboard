@@ -145,9 +145,9 @@
                                     <action selector="timePickerValueChanged:" destination="Vyd-Ub-Pzx" eventType="valueChanged" id="A0d-8b-PW4"/>
                                 </connections>
                             </datePicker>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-wc-nuT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="uzX-wc-nuT">
                                 <rect key="frame" x="0.0" y="246" width="375" height="372"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1383,9 +1383,7 @@
         <scene sceneID="gcM-lG-0p3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DQQ-mk-md2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Actions" image="action-icon" id="RpD-jX-snm">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Actions" image="action-icon" id="RpD-jX-snm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lcu-3n-jNl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1404,7 +1402,7 @@
         <scene sceneID="fVm-b0-RME">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xo9-N8-MZL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Nudges" id="5M8-qj-VAW"/>
+                    <tabBarItem key="tabBarItem" title="Nudges" image="nudge-icon" id="5M8-qj-VAW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cVh-9R-bFa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1430,6 +1428,7 @@
         <image name="fearcheck-icon" width="22" height="17"/>
         <image name="frustration-icon" width="28" height="32"/>
         <image name="frustrationcheck-icon" width="22" height="17"/>
+        <image name="nudge-icon" width="21" height="27"/>
         <image name="overwhelmed-icon" width="34" height="31"/>
         <image name="overwhelmedcheck-icon" width="22" height="17"/>
     </resources>

@@ -31,6 +31,8 @@
 		1458181B1A3445B70070C457 /* AlarmDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818161A3445B70070C457 /* AlarmDate.swift */; };
 		1458181C1A3445B70070C457 /* AlarmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818171A3445B70070C457 /* AlarmDB.swift */; };
 		1458181D1A3445B70070C457 /* AlarmScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145818181A3445B70070C457 /* AlarmScheduler.swift */; };
+		149610521A379F25002D0CFF /* AlarmDeleteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149610511A379F25002D0CFF /* AlarmDeleteView.xib */; };
+		149610541A37A290002D0CFF /* AlarmDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149610531A37A290002D0CFF /* AlarmDeleteView.swift */; };
 		14A6D3EC1A35BD4600653990 /* AlarmSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6D3EB1A35BD4600653990 /* AlarmSettingVC.swift */; };
 		14AEFC9E1A241FD300BD2F92 /* Realization.wav in Resources */ = {isa = PBXBuildFile; fileRef = 14AEFC9D1A241FD300BD2F92 /* Realization.wav */; };
 		14C206E91A3448260010DC0C /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FBC11D1A14C00E00BD6B15 /* HockeySDK.framework */; };
@@ -114,6 +116,8 @@
 		145818161A3445B70070C457 /* AlarmDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDate.swift; sourceTree = "<group>"; };
 		145818171A3445B70070C457 /* AlarmDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmDB.swift; sourceTree = "<group>"; };
 		145818181A3445B70070C457 /* AlarmScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmScheduler.swift; sourceTree = "<group>"; };
+		149610511A379F25002D0CFF /* AlarmDeleteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlarmDeleteView.xib; path = Settings/AlarmDeleteView.xib; sourceTree = "<group>"; };
+		149610531A37A290002D0CFF /* AlarmDeleteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmDeleteView.swift; path = Settings/AlarmDeleteView.swift; sourceTree = "<group>"; };
 		14A6D3EB1A35BD4600653990 /* AlarmSettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmSettingVC.swift; sourceTree = "<group>"; };
 		14AEFC9D1A241FD300BD2F92 /* Realization.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Realization.wav; sourceTree = "<group>"; };
 		14C206EA1A344A790010DC0C /* AlarmContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmContainerVC.swift; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 				14A6D3EB1A35BD4600653990 /* AlarmSettingVC.swift */,
 				14D0A7D21A364339007C3A57 /* AlarmSettingView.swift */,
 				14D0A7D01A363D08007C3A57 /* AlarmSettingView.xib */,
+				149610531A37A290002D0CFF /* AlarmDeleteView.swift */,
+				149610511A379F25002D0CFF /* AlarmDeleteView.xib */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149610521A379F25002D0CFF /* AlarmDeleteView.xib in Resources */,
 				1AB847D51A0701B1008509FE /* univers-light-condensed-1361511939.ttf in Resources */,
 				1AB847D61A0701B1008509FE /* Univers-Condensed-Bold.ttf in Resources */,
 				1AB847C81A06ECF9008509FE /* Univers-Light-Bold.ttf in Resources */,
@@ -554,6 +561,7 @@
 				145818111A3444FF0070C457 /* ProtocolsViewController.swift in Sources */,
 				1458180D1A3444FF0070C457 /* FearViewController.swift in Sources */,
 				1AB847DF1A07112F008509FE /* DesignableView.swift in Sources */,
+				149610541A37A290002D0CFF /* AlarmDeleteView.swift in Sources */,
 				145818081A3444FF0070C457 /* ActionsViewController.swift in Sources */,
 				1AB847E01A07112F008509FE /* Misc.swift in Sources */,
 				1458181B1A3445B70070C457 /* AlarmDate.swift in Sources */,
