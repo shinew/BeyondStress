@@ -54,7 +54,7 @@ class AlarmCellView: UITableViewCell {
     //hour: [0, 23]
     //minutes: [0, 59]
     private func setTime(hour: Int, minutes: Int) {
-        let hourString = String(format: "%02d", (hour % 12 == 0) ? 12 : (hour % 12))
+        let hourString = String(format: "%d", (hour % 12 == 0) ? 12 : (hour % 12))
         let minuteString = String(format: "%02d", minutes)
         let timeString = hourString + ":" + minuteString
         let ampmString = (hour < 12) ? "am" : "pm"
