@@ -19,6 +19,7 @@ class Alarm {
     var fireDate: NSDate
     var dates: AlarmDate
     var index: Int
+    var message: String
     
     init() {
         self.text = ""
@@ -29,10 +30,11 @@ class Alarm {
         self.fireDate = NSDate()
         self.dates = AlarmDate()
         self.index = 0
+        self.message = ""
     }
     
     //used for re-initialization from DB
-    init(text: String, minute: Int, hour: Int, enabled: Bool, repeat: Bool, fireDate: NSDate, dates: AlarmDate, index: Int) {
+    init(text: String, minute: Int, hour: Int, enabled: Bool, repeat: Bool, fireDate: NSDate, dates: AlarmDate, index: Int, message: String) {
         self.text = text
         self.minute = minute
         self.hour = hour
@@ -41,6 +43,7 @@ class Alarm {
         self.fireDate = fireDate
         self.dates = dates
         self.index = index
+        self.message = message
     }
     
     func copy() -> Alarm {
@@ -52,7 +55,8 @@ class Alarm {
             repeat: self.repeat,
             fireDate: self.fireDate,
             dates: self.dates.copy(),
-            index: self.index
+            index: self.index,
+            message: self.message
         )
     }
     

@@ -14,7 +14,7 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     private let TAG = "AlarmSettingVC"
-    private let keys = ["Repeat", "Label"]
+    private let keys = ["Repeat", "Label", "Message"]
     private var settingCells = [AlarmSettingView]()
     private var deleteCell: AlarmDeleteView!
     private var settingState = SettingState.Add
@@ -38,7 +38,7 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
             self.settingState = SettingState.Add
             //instantiate new alarm with current time
             let time = Conversion.dateToHourMinute(self.timePicker.date)
-            self.alarm = Alarm(text: "Nudge", minute: time.1, hour: time.0, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 0)
+            self.alarm = Alarm(text: "", minute: time.1, hour: time.0, enabled: true, repeat: false, fireDate: NSDate(), dates: AlarmDate(), index: 0, message: "")
         }
         
         //set the timer to the alarm date
@@ -78,10 +78,15 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     func addSettingCell(key: String) {
         let contents = NSBundle.mainBundle().loadNibNamed("AlarmSettingView", owner: nil, options: nil)
         let newView = contents.last! as AlarmSettingView
-        if key == self.keys[0] {
+        switch key {
+        case "Repeat":
             newView.setKeyDateLabel(key, defaultDate: self.alarm.dates, defaultLabel: nil)
-        } else {
+        case "Label":
             newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: self.alarm.text)
+        case "Message":
+            newView.setKeyDateLabel(key, defaultDate: nil, defaultLabel: self.alarm.message)
+        default:
+            NSLog("(%@) %@", TAG, "No instance found for alarm setting cell with key \(key)")
         }
         newView.selectionStyle = UITableViewCellSelectionStyle.None
         self.settingCells.append(newView)
@@ -97,9 +102,14 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         self.updateRepeatLabel()
     }
     
-    func notifyNewText(text: String) {
-        self.alarm.text = text
-        self.updateTextLabel()
+    func notifyNewText(key: String, text: String) {
+        if key == "Label" {
+            self.alarm.text = text
+            self.updateTextLabel()
+        } else if key == "Message" {
+            self.alarm.message = text
+            self.updateMessageLabel()
+        }
     }
     
     //for edit mode, we want to change the title to "Edit Nudge"
@@ -119,6 +129,12 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
         textCell.setText(self.alarm.text)
     }
     
+    func updateMessageLabel() {
+        let textCell = self.settingCells[2]
+        textCell.setText(self.alarm.message)
+
+    }
+    
     func returnToAlarmContainerVC() {
         self.navigationController!.popViewControllerAnimated(true)
     }
@@ -126,15 +142,15 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
     //overrides
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if self.settingState == SettingState.Add {
-            return 1
+            return 1 //we don't display the delete alarm cell
         } else {
-            return 2
+            return self.keys.count
         }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return self.keys.count
         } else {
             return 1
         }
@@ -156,11 +172,17 @@ class AlarmSettingVC: PortraitViewController, UITableViewDelegate, UITableViewDa
                 let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmRepeatVC") as AlarmRepeatVC
                 vc.setAlarmDate(self.alarm.dates, alarmSettingVC: self)
                 self.navigationController!.pushViewController(vc, animated: true)
+            } else if indexPath.row == 1 {
+                //pressed "Label"
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmTextVC") as AlarmTextVC
+                vc.setDefaultText("Label", text: self.alarm.text, alarmSettingVC: self)
+                self.navigationController!.pushViewController(vc, animated: true)
             } else {
                 //pressed "Label"
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewControllerWithIdentifier("AlarmTextVC") as AlarmTextVC
-                vc.setDefaultText(self.alarm.text, alarmSettingVC: self)
+                vc.setDefaultText("Message", text: self.alarm.message, alarmSettingVC: self)
                 self.navigationController!.pushViewController(vc, animated: true)
             }
         } else {

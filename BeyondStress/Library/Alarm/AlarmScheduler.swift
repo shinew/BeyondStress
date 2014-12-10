@@ -13,7 +13,7 @@ class AlarmScheduler {
     
     private let TAG = "AlarmScheduler"
     
-    private let message = "Feeling tense? Let's take a breath."
+    private let defaultMessage = "Feeling tense? Let's take a breath."
     
     //reschedules all the alarms for this application (removing existing ones)
     func rescheduleAlarms(alarms: [Alarm]) {
@@ -50,7 +50,11 @@ class AlarmScheduler {
     private func setNotification(date: NSDate, alarm: Alarm, repeatWeekly: Bool) {
         alarm.fireDate = date
         var notification = UILocalNotification()
-        notification.alertBody = message
+        if alarm.message == "" {
+            notification.alertBody = self.defaultMessage
+        } else {
+            notification.alertBody = alarm.message
+        }
         notification.soundName = "Realization.wav"
         notification.fireDate = date
         if repeatWeekly {
@@ -58,6 +62,6 @@ class AlarmScheduler {
         }
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
-        NSLog("(%@) %@", TAG, "Notification set for \(Conversion.dateToString(date)).\nRepeat is \(repeatWeekly).")
+        NSLog("(%@) %@", TAG, "Notification set for \(Conversion.dateToString(date)).\nRepeat is \(repeatWeekly). Message: \"\(notification.alertBody)\".")
     }
 }

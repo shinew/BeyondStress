@@ -15,7 +15,6 @@ class AlarmSettingView: UITableViewCell {
     
     private let TAG = "AlarmSettingView"
     
-    private let keys = ["Repeat", "Label"]
     private var key = ""
     private var date: AlarmDate!
     private var descriptionText: String!
@@ -40,22 +39,28 @@ class AlarmSettingView: UITableViewCell {
         self.updateView()
     }
     
-    func updateView() {
-        if self.key == self.keys[0] {
+    private func updateView() {
+        if self.key == "Repeat" {
             let dateText = self.dateAsText()
             dispatch_async(dispatch_get_main_queue(), {
                 self.keyLabel.text = self.key
                 self.valueLabel.text = dateText
             })
         } else {
+            var text = self.descriptionText
+            if self.key == "Message" && text == "" {
+                text = "Default"
+            } else if self.key == "Label" && text == "" {
+                text = "Nudge"
+            }
             dispatch_async(dispatch_get_main_queue(), {
                 self.keyLabel.text = self.key
-                self.valueLabel.text = self.descriptionText
+                self.valueLabel.text = text
             })
         }
     }
     
-    func dateAsText() -> String {
+    private func dateAsText() -> String {
         if !self.date.hasAny() {
             return "Never"
         }

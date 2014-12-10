@@ -12,6 +12,7 @@ class AlarmTextVC: PortraitViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textField: UITextField!
     private var alarmSettingVC: AlarmSettingVC!
+    private var key = ""
     
     override func viewDidLoad() {
         dispatch_async(dispatch_get_main_queue(), {
@@ -33,7 +34,8 @@ class AlarmTextVC: PortraitViewController, UITextFieldDelegate {
         return true
     }
     
-    func setDefaultText(text: String, alarmSettingVC: AlarmSettingVC) {
+    func setDefaultText(key: String, text: String, alarmSettingVC: AlarmSettingVC) {
+        self.key = key
         self.alarmSettingVC = alarmSettingVC
         dispatch_async(dispatch_get_main_queue(), {
             self.textField.text = text
@@ -41,7 +43,7 @@ class AlarmTextVC: PortraitViewController, UITextFieldDelegate {
     }
     
     @IBAction func editingDidEnd(sender: AnyObject) {
-        self.alarmSettingVC.notifyNewText(self.textField.text)
+        self.alarmSettingVC.notifyNewText(self.key, text: self.textField.text)
     }
     
     func returnToAlarmContainerVC() {

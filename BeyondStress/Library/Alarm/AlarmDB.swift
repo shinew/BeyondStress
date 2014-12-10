@@ -38,7 +38,8 @@ class AlarmDB {
                         repeat: thisItem.valueForKey("repeat") as Bool,
                         fireDate: thisItem.valueForKey("fireDate") as NSDate,
                         dates: AlarmDate(days: thisItem.valueForKey("dates") as Int),
-                        index: thisItem.valueForKey("index") as Int
+                        index: thisItem.valueForKey("index") as Int,
+                        message: thisItem.valueForKey("message") as String
                     )
                 )
             }
@@ -69,6 +70,7 @@ class AlarmDB {
                 alarmEntity.setValue(alarm.fireDate, forKey: "fireDate")
                 alarmEntity.setValue(alarm.dates.getRaw(), forKey: "dates")
                 alarmEntity.setValue(alarm.index, forKey: "index")
+                alarmEntity.setValue(alarm.message, forKey: "message")
             }
             
             appContext.save(nil)
