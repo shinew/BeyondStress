@@ -67,6 +67,7 @@ class AlarmContainerVC: UITableViewController {
         self.alarmContainer.add(Alarm(text: "Night", minute: 0, hour: 19, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "Let's take a moment to be calm for family time."))
         
         userDefaults.setBool(true, forKey: "addedDefaultAlarms")
+        userDefaults.synchronize()
     }
     
     func editToggleViewUpdate() {

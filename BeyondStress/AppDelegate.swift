@@ -26,15 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Mixpanel.sharedInstanceWithToken(MIXPANEL_TOKEN)
         Mixpanel.sharedInstance().track("App opened")
         
-        //Open onboarding screen
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        if !userDefaults.boolForKey("onboardingDone") || true {
-            userDefaults.setBool(true, forKey: "onboardingDone")
-            let onboardingManager = OnboardingManager()
-            self.window!.rootViewController = onboardingManager.onboardingVC
-            return true
-        }
-        
         //Setting notification permissions
         if UIDevice.currentDevice().systemVersion >= "8" {
             let settings = UIUserNotificationSettings(
@@ -42,6 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 categories: nil
             )
             UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        }
+        
+        //Open onboarding screen
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if !userDefaults.boolForKey("onboardingDone") {
+            userDefaults.setBool(true, forKey: "onboardingDone")
+            userDefaults.synchronize()
+            let onboardingManager = OnboardingManager()
+            self.window!.rootViewController = onboardingManager.onboardingVC
+            return true
         }
         
         //Possibly bring to actions page

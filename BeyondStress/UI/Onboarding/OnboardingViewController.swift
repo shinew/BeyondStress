@@ -30,6 +30,7 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.edgesForExtendedLayout = .None
+        
         generateView()
     }
     
@@ -39,17 +40,17 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         pageViewController.view.frame = self.view.frame;
         
         // create the background image view and set it to aspect fill so it isn't skewed
-        var backgroundImageView: UIImageView = UIImageView(image: backgroundImage)
-        backgroundImageView.frame = self.view.frame
-        backgroundImageView.contentMode = .ScaleAspectFit
-        self.view.addSubview(backgroundImageView)
-        
-        var backgroundMaskView = UIView()
-        if shouldMaskBackground {
-            backgroundMaskView = UIView(frame: self.view.frame)
-            backgroundMaskView.backgroundColor = UIColor(white: 0.0, alpha: kBackgroundMaskAlpha)
-            self.view.addSubview(backgroundMaskView)
-        }
+//        var backgroundImageView: UIImageView = UIImageView(image: backgroundImage)
+//        backgroundImageView.frame = self.view.frame
+//        backgroundImageView.contentMode = .ScaleAspectFit
+//        self.view.addSubview(backgroundImageView)
+//        
+//        var backgroundMaskView = UIView()
+//        if shouldMaskBackground {
+//            backgroundMaskView = UIView(frame: self.view.frame)
+//            backgroundMaskView.backgroundColor = UIColor(white: 0.0, alpha: kBackgroundMaskAlpha)
+//            self.view.addSubview(backgroundMaskView)
+//        }
         
         
         pageViewController.setViewControllers([contents[0]], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
@@ -57,11 +58,11 @@ class OnboardingViewController: UIViewController, UIPageViewControllerDataSource
         self.addChildViewController(pageViewController)
         self.view.addSubview(pageViewController.view)
         pageViewController.didMoveToParentViewController(self)
-        pageViewController.view.sendSubviewToBack(backgroundMaskView)
-        pageViewController.view.sendSubviewToBack(backgroundImageView)
+        //pageViewController.view.sendSubviewToBack(backgroundMaskView)
+        //pageViewController.view.sendSubviewToBack(backgroundImageView)
         
         pageControl.frame = CGRectMake(0, CGRectGetMaxY(self.view.frame) - kPageControlHeight, self.view.bounds.size.width, kPageControlHeight)
-        pageControl.numberOfPages = contents.count
+        pageControl.numberOfPages = contents.count;
         pageControl.autoresizingMask = .FlexibleWidth | .FlexibleTopMargin
         self.view.addSubview(pageControl)
     }

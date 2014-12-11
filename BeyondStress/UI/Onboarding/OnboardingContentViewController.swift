@@ -18,22 +18,25 @@ class OnboardingContentViewController: UIViewController {
     func makeStartScreen() {
         self.mainTitleLabel.hidden = false
         self.mainImageView.hidden = true
-        self.bottomTextView.text = "We make stress reduction a part of life instead of a break from life"
-        self.bottomTextView.textColor = UIColor.whiteColor()
-        self.bottomTextView.font = UIFont(name: "UniversLightCondensed-Regular", size: 20)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "onboarding-background")!)
+        self.resetTextView("We make stress reduction a part of life instead of a break from life")
+        (self.view as UIImageView).image = UIImage(named: "onboarding-background")!
     }
     
     func customize(image: UIImage, subtitle: String, enableButton: Bool) {
-        self.bottomTextView.text = subtitle
-        self.bottomTextView.textColor = UIColor.whiteColor()
-        self.bottomTextView.font = UIFont(name: "UniversLightCondensed-Regular", size: 20)
+        self.resetTextView(subtitle)
         self.mainImageView.image = image
         self.escapeButton.hidden = !enableButton
         
         self.escapeButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.escapeButton.layer.borderWidth = 1
         self.escapeButton.layer.cornerRadius = 7.5
+    }
+    
+    private func resetTextView(text: String) {
+        self.bottomTextView.text = text
+        self.bottomTextView.textColor = UIColor.whiteColor()
+        self.bottomTextView.font = UIFont(name: "UniversLightCondensed-Regular", size: 20)
+        self.bottomTextView.scrollRangeToVisible(NSMakeRange(0, 1))
     }
     
     @IBAction func escapeButtonDidPress(sender: AnyObject) {
