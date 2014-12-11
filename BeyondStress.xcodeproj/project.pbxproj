@@ -13,6 +13,8 @@
 		140C3FAF1A36607000DCB36E /* AlarmRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */; };
 		140C3FB11A36735B00DCB36E /* AlarmTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FB01A36735B00DCB36E /* AlarmTextVC.swift */; };
 		140C3FB41A369A8300DCB36E /* ActionDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FB31A369A8300DCB36E /* ActionDB.swift */; };
+		1426966B1A398F8500706BDB /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142696691A398F8500706BDB /* OnboardingContentViewController.swift */; };
+		1426966C1A398F8500706BDB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1426966A1A398F8500706BDB /* OnboardingViewController.swift */; };
 		145817F61A3442B30070C457 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F51A3442B30070C457 /* Conversion.swift */; };
 		145817F81A3443380070C457 /* BreakActivityCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817F71A3443380070C457 /* BreakActivityCounter.swift */; };
 		145817FC1A3444EC0070C457 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145817FA1A3444EC0070C457 /* HomeTabBarController.swift */; };
@@ -99,6 +101,8 @@
 		140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatView.swift; sourceTree = "<group>"; };
 		140C3FB01A36735B00DCB36E /* AlarmTextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTextVC.swift; sourceTree = "<group>"; };
 		140C3FB31A369A8300DCB36E /* ActionDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionDB.swift; sourceTree = "<group>"; };
+		142696691A398F8500706BDB /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
+		1426966A1A398F8500706BDB /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		143BD9581A2C676F00243912 /* Univers-LT-67-Condensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Univers-LT-67-Condensed-Bold.ttf"; sourceTree = "<group>"; };
 		143BD9591A2C676F00243912 /* UniversUltraCondensedBQ-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversUltraCondensedBQ-Light.otf"; sourceTree = "<group>"; };
 		145817F51A3442B30070C457 /* Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				14073B761A396AB9004F75B0 /* OnboardingManager.swift */,
+				142696691A398F8500706BDB /* OnboardingContentViewController.swift */,
+				1426966A1A398F8500706BDB /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -643,10 +649,12 @@
 				14D0E2391A008C6D0042F20A /* BeyondStress.xcdatamodeld in Sources */,
 				140C3FB11A36735B00DCB36E /* AlarmTextVC.swift in Sources */,
 				1458180E1A3444FF0070C457 /* FrustrationViewController.swift in Sources */,
+				1426966C1A398F8500706BDB /* OnboardingViewController.swift in Sources */,
 				145818101A3444FF0070C457 /* ProtocolAnimation.swift in Sources */,
 				145817F61A3442B30070C457 /* Conversion.swift in Sources */,
 				14A6D3EC1A35BD4600653990 /* AlarmSettingVC.swift in Sources */,
 				1458180A1A3444FF0070C457 /* CalibrateViewController.swift in Sources */,
+				1426966B1A398F8500706BDB /* OnboardingContentViewController.swift in Sources */,
 				14C206EE1A344B580010DC0C /* AlarmCellView.swift in Sources */,
 				145817FD1A3444EC0070C457 /* PortraitViewController.swift in Sources */,
 				14C206EB1A344A790010DC0C /* AlarmContainerVC.swift in Sources */,

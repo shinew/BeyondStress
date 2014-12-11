@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "onboarding3-image.png"
+      "filename" : "phone3-image.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "onboarding3-image@2x.png"
+      "filename" : "phone3-image@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "onboarding3-image@3x.png"
+      "filename" : "phone3-image@3x.png"
     }
   ],
   "info" : {

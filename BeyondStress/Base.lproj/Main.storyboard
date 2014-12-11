@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NaH-e3-zsE">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -17,6 +19,9 @@
             <string>UniversCondensed-Medium</string>
         </mutableArray>
         <mutableArray key="univers-light-condensed-1361511939.ttf">
+            <string>UniversLightCondensed-Regular</string>
+            <string>UniversLightCondensed-Regular</string>
+            <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
             <string>UniversLightCondensed-Regular</string>
@@ -301,7 +306,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaC-VX-3zF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Do you want to take a:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-Xr-Rgd">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to take a:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBg-Xr-Rgd">
                                         <rect key="frame" x="54.5" y="125" width="265.5" height="41.5"/>
                                         <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -390,7 +395,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Do-CY-lj0">
                                         <rect key="frame" x="62" y="152" width="250" height="250"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc0-9K-I4h">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc0-9K-I4h">
                                                 <rect key="frame" x="106" y="94.5" width="38.5" height="61.5"/>
                                                 <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="65"/>
                                                 <color key="textColor" red="0.1843137255" green="0.59607843140000005" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -410,7 +415,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Breath Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUN-Cy-zr7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breath Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUN-Cy-zr7">
                                         <rect key="frame" x="132.5" y="97" width="110.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Univers-Light-Bold" family="Univers-Light" pointSize="21"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -746,7 +751,7 @@
                             <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Z-bs-V41">
                                 <rect key="frame" x="0.0" y="64" width="375" height="553.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-7W-57k">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-7W-57k">
                                         <rect key="frame" x="66" y="259" width="242" height="35.5"/>
                                         <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1059,7 +1064,7 @@
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSp-rr-yst">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG2-2A-ZWG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG2-2A-ZWG">
                                         <rect key="frame" x="70.5" y="262.5" width="234" height="28.5"/>
                                         <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1199,7 +1204,7 @@
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nna-3R-b3X">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gx-EQ-l76">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gx-EQ-l76">
                                         <rect key="frame" x="70.5" y="262.5" width="234" height="28.5"/>
                                         <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1325,7 +1330,7 @@
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gR7-6r-Yfz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-SF-qmv">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great! You are now focused." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-SF-qmv">
                                         <rect key="frame" x="68" y="262.5" width="234" height="28.5"/>
                                         <fontDescription key="fontDescription" name="UniversCondensed-Medium" family="Univers Condensed" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -1381,6 +1386,94 @@
             </objects>
             <point key="canvasLocation" x="3787.5" y="2246.5"/>
         </scene>
+        <!--Onboarding Content View Controller-->
+        <scene sceneID="sj5-9s-vvu">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingVC" id="vmi-zM-Elr" customClass="OnboardingContentViewController" customModule="BeyondStress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rn7-PJ-UzW"/>
+                        <viewControllerLayoutGuide type="bottom" id="uO9-F4-ecG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0fH-7U-vzY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blv-9j-LQg">
+                                <rect key="frame" x="60" y="483.5" width="255" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="bUY-Wm-rfd"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="beyond stress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vva-dD-vjh">
+                                <rect key="frame" x="105" y="125" width="165.5" height="44"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="38"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPF-8e-hkO">
+                                <rect key="frame" x="60" y="561.5" width="255" height="41"/>
+                                <fontDescription key="fontDescription" name="UniversLightCondensed-Regular" family="Univers Light Condensed" pointSize="25"/>
+                                <state key="normal" title="Let's Get Beyond Stress">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="escapeButtonDidPress:" destination="vmi-zM-Elr" eventType="touchUpInside" id="if8-Qu-PaY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding4" translatesAutoresizingMaskIntoConstraints="NO" id="IKv-7C-JMf">
+                                <rect key="frame" x="59.5" y="75" width="255" height="393.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="bS8-KI-kQh"/>
+                                    <constraint firstAttribute="width" secondItem="IKv-7C-JMf" secondAttribute="height" multiplier="518:798" id="ydf-9T-I46"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bS8-KI-kQh"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40784313725490196" green="0.65098039215686276" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yPF-8e-hkO" firstAttribute="top" secondItem="Blv-9j-LQg" secondAttribute="bottom" constant="8" id="25P-NQ-0Vx"/>
+                            <constraint firstItem="vva-dD-vjh" firstAttribute="top" secondItem="Rn7-PJ-UzW" secondAttribute="bottom" constant="105" id="4NC-fM-EK3"/>
+                            <constraint firstAttribute="centerX" secondItem="yPF-8e-hkO" secondAttribute="centerX" id="9Dt-j8-fQt"/>
+                            <constraint firstItem="Blv-9j-LQg" firstAttribute="top" secondItem="IKv-7C-JMf" secondAttribute="bottom" constant="15" id="B65-9w-Fpu"/>
+                            <constraint firstItem="IKv-7C-JMf" firstAttribute="leading" secondItem="0fH-7U-vzY" secondAttribute="leadingMargin" constant="35" id="EGQ-fG-hBA"/>
+                            <constraint firstAttribute="width" secondItem="IKv-7C-JMf" secondAttribute="width" id="Ffg-F8-A2N"/>
+                            <constraint firstAttribute="centerX" secondItem="IKv-7C-JMf" secondAttribute="centerX" id="JAJ-Xp-StT"/>
+                            <constraint firstItem="IKv-7C-JMf" firstAttribute="height" secondItem="0fH-7U-vzY" secondAttribute="height" multiplier="0.59" id="RY0-66-7Da"/>
+                            <constraint firstItem="Blv-9j-LQg" firstAttribute="width" secondItem="IKv-7C-JMf" secondAttribute="width" id="RcF-zd-SpA"/>
+                            <constraint firstAttribute="centerX" secondItem="Blv-9j-LQg" secondAttribute="centerX" id="U1i-yW-Iwa"/>
+                            <constraint firstItem="IKv-7C-JMf" firstAttribute="top" secondItem="Rn7-PJ-UzW" secondAttribute="bottom" constant="55" id="b3V-hc-MsR"/>
+                            <constraint firstItem="yPF-8e-hkO" firstAttribute="width" secondItem="Blv-9j-LQg" secondAttribute="width" id="gvw-ca-gim"/>
+                            <constraint firstAttribute="centerX" secondItem="vva-dD-vjh" secondAttribute="centerX" id="jvw-GH-cCP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IKv-7C-JMf" secondAttribute="trailing" constant="35" id="rm0-Ty-EKa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EGQ-fG-hBA"/>
+                                <exclude reference="Ffg-F8-A2N"/>
+                                <exclude reference="rm0-Ty-EKa"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bottomTextView" destination="Blv-9j-LQg" id="XyR-P1-AqC"/>
+                        <outlet property="escapeButton" destination="yPF-8e-hkO" id="8MQ-aG-bqj"/>
+                        <outlet property="mainImageView" destination="IKv-7C-JMf" id="dKZ-K3-eMF"/>
+                        <outlet property="mainTitleLabel" destination="vva-dD-vjh" id="TD6-Hl-ini"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QX1-l7-dPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195.5" y="202.5"/>
+        </scene>
         <!--Actions-->
         <scene sceneID="gcM-lG-0p3">
             <objects>
@@ -1431,6 +1524,7 @@
         <image name="frustration-icon" width="28" height="32"/>
         <image name="frustrationcheck-icon" width="22" height="17"/>
         <image name="nudge-icon" width="21" height="27"/>
+        <image name="onboarding4" width="258" height="399"/>
         <image name="overwhelmed-icon" width="34" height="31"/>
         <image name="overwhelmedcheck-icon" width="22" height="17"/>
     </resources>
