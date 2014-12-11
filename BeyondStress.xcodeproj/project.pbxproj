@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14073B771A396AB9004F75B0 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14073B761A396AB9004F75B0 /* OnboardingManager.swift */; };
 		140C3FAA1A365F3400DCB36E /* AlarmRepeatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FA91A365F3400DCB36E /* AlarmRepeatVC.swift */; };
 		140C3FAC1A36600900DCB36E /* AlarmRepeatView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */; };
 		140C3FAF1A36607000DCB36E /* AlarmRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		140724671A384759009A90E1 /* BeyondStress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeyondStress-Bridging-Header.h"; sourceTree = "<group>"; };
+		14073B761A396AB9004F75B0 /* OnboardingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		140C3FA91A365F3400DCB36E /* AlarmRepeatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmRepeatVC.swift; path = ../../../Library/Alarm/AlarmRepeatVC.swift; sourceTree = "<group>"; };
 		140C3FAB1A36600800DCB36E /* AlarmRepeatView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AlarmRepeatView.xib; path = ../AlarmRepeatView.xib; sourceTree = "<group>"; };
 		140C3FAE1A36607000DCB36E /* AlarmRepeatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmRepeatView.swift; sourceTree = "<group>"; };
@@ -222,6 +224,14 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
+		143399051A396A6A00517103 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				14073B761A396AB9004F75B0 /* OnboardingManager.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		145817F21A343F830070C457 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +260,7 @@
 			children = (
 				145817FA1A3444EC0070C457 /* HomeTabBarController.swift */,
 				145817FB1A3444EC0070C457 /* PortraitViewController.swift */,
+				143399051A396A6A00517103 /* Onboarding */,
 				145818121A34452A0070C457 /* Alarm */,
 				1AB847D41A06FBA0008509FE /* Action */,
 			);
@@ -610,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1458180C1A3444FF0070C457 /* DeepBreathsViewController.swift in Sources */,
+				14073B771A396AB9004F75B0 /* OnboardingManager.swift in Sources */,
 				1458180B1A3444FF0070C457 /* ConflictViewController.swift in Sources */,
 				1AB847E11A07112F008509FE /* SpringAnimation.swift in Sources */,
 				140C3FAA1A365F3400DCB36E /* AlarmRepeatVC.swift in Sources */,

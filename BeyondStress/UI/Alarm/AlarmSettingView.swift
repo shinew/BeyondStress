@@ -50,7 +50,7 @@ class AlarmSettingView: UITableViewCell {
             var text = self.descriptionText
             if self.key == "Message" && text == "" {
                 text = "Default"
-            } else if self.key == "Label" && text == "" {
+            } else if self.key == "Description" && text == "" {
                 text = "Nudge"
             }
             dispatch_async(dispatch_get_main_queue(), {

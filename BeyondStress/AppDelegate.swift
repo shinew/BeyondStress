@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Mixpanel
         Mixpanel.sharedInstanceWithToken(MIXPANEL_TOKEN)
-        let mixPanel = Mixpanel.sharedInstance()
-        mixPanel.track("App opened")
+        Mixpanel.sharedInstance().track("App opened")
         
         //Setting notification permissions
         if UIDevice.currentDevice().systemVersion >= "8" {
