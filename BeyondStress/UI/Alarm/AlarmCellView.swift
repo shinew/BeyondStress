@@ -86,9 +86,15 @@ class AlarmCellView: UITableViewCell {
         ]
         for i in 0 ..< dayLabels.count {
             if days.contains(DayOfWeek.allValues[i]) {
-                dispatch_async(dispatch_get_main_queue(), {
-                    dayLabels[i].textColor = UIColor.blackColor()
-                })
+                if self.alarm.enabled {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        dayLabels[i].textColor = UIColor.blackColor()
+                    })
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        dayLabels[i].textColor = UIColor.darkGrayColor()
+                    })
+                }
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
                     dayLabels[i].textColor = UIColor.lightGrayColor()
@@ -101,11 +107,17 @@ class AlarmCellView: UITableViewCell {
         if enabled {
             dispatch_async(dispatch_get_main_queue(), {
                 self.backgroundColor = UIColor.whiteColor()
+                self.timeLabel.textColor = UIColor.blackColor()
+                self.ampmLabel.textColor = UIColor.blackColor()
+                self.descriptionLabel.textColor = UIColor.blackColor()
                 self.enabledSwitch.setOn(true, animated: true)
             })
         } else {
             dispatch_async(dispatch_get_main_queue(), {
-                self.backgroundColor = UIColor.lightGrayColor()
+                self.backgroundColor = Conversion.UIColorFromRGB(239, green: 239, blue: 244)
+                self.timeLabel.textColor = UIColor.darkGrayColor()
+                self.ampmLabel.textColor = UIColor.darkGrayColor()
+                self.descriptionLabel.textColor = UIColor.darkGrayColor()
                 self.enabledSwitch.setOn(false, animated: true)
             })
         }

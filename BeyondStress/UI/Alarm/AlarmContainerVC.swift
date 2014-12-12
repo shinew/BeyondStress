@@ -110,7 +110,7 @@ class AlarmContainerVC: UITableViewController {
         self.alarmContainer.add(alarm)
         self.addInitialAlarmCell(alarm)
         
-        Mixpanel.sharedInstance().track("Added alarm", properties: ["alarmCount": self.alarmContainer.count()])
+        Mixpanel.sharedInstance().track("Added alarm")
         
         self.reindentRows()
     }
@@ -144,7 +144,7 @@ class AlarmContainerVC: UITableViewController {
         self.unindentConstraints.removeAtIndex(indexPath.row)
         self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
         
-        Mixpanel.sharedInstance().track("Deleted alarm", properties: ["alarmCount": self.alarmContainer.count()])
+        Mixpanel.sharedInstance().track("Deleted alarm")
     }
     
     //called by AlarmCellView if enabledSwitch was toggled (in non-editing mode)

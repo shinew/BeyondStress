@@ -20,6 +20,7 @@ class DeepBreathsViewController: PortraitViewController {
     var breathOutCounter = 0
     var nextVCID = ""
     var startedAnimation = false
+    var moved = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,12 @@ class DeepBreathsViewController: PortraitViewController {
             self.startedAnimation = true
             self.bubbleCallback()
         }
+    }
+    
+    @IBAction func skipButtonDidPress(sender: AnyObject) {
+        self.moved = true
+        self.breathLabel.text = "Great! You are now focused."
+        self.moveToNextVC()
     }
     
     func setNext(id: String) {
@@ -52,7 +59,9 @@ class DeepBreathsViewController: PortraitViewController {
                 }
                 self.breathOutCounter += 1
                 self.bubbleView.transform = CGAffineTransformMakeScale(0.5, 0.5)
-                self.vibratePhone()
+                if !self.moved {
+                    self.vibratePhone()
+                }
             }, completion: {
                 finished in UIView.animateWithDuration(
                     3,
@@ -67,7 +76,9 @@ class DeepBreathsViewController: PortraitViewController {
                         }
                         self.breathOutCounter += 1
                         self.bubbleView.transform = CGAffineTransformMakeScale(1.0, 1.0)
-                        self.vibratePhone()
+                        if !self.moved {
+                            self.vibratePhone()
+                        }
                     }, completion: {finished in
                         if self.bubbleCounter < 3 {
                             self.shrinkingDelay = 1.0
@@ -78,7 +89,10 @@ class DeepBreathsViewController: PortraitViewController {
                         else {
                             UIView.animateWithDuration(3, animations: {
                                 self.breathLabel.text = "Great! You are now focused."
-                                self.moveToNextVC()
+                                if !self.moved {
+                                    self.moved = true
+                                    self.moveToNextVC()
+                                }
                             })
                         }
                     }
