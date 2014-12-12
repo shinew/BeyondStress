@@ -18,6 +18,7 @@ class DeepBreathsViewController: PortraitViewController {
     var bubbleCounter = 1
     var shrinkingDelay = 0.0
     var breathOutCounter = 0
+    var nextVCID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,10 @@ class DeepBreathsViewController: PortraitViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.bubbleCallback()
+    }
+    
+    func setNext(id: String) {
+        self.nextVCID = id
     }
     
     private func bubbleCallback() -> Void {
@@ -70,6 +75,7 @@ class DeepBreathsViewController: PortraitViewController {
                             UIView.animateWithDuration(3, animations: {
                                 self.bubbleView.transform = CGAffineTransformMakeScale(0.5,0.5)
                                 self.breathLabel.text = "Great! You are now focused."
+                                self.moveToNextVC()
                             })
                         }
                     }
@@ -80,5 +86,11 @@ class DeepBreathsViewController: PortraitViewController {
     
     private func vibratePhone() {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+    
+    private func moveToNextVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let actionsVC = storyboard.instantiateViewControllerWithIdentifier(nextVCID) as UIViewController
+        self.navigationController!.pushViewController(actionsVC, animated: true)
     }
 }
