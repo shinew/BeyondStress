@@ -50,6 +50,6 @@ class ProtocolsViewController: PortraitViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let breathingVC = storyboard.instantiateViewControllerWithIdentifier(rootVCID) as DeepBreathsViewController
         breathingVC.setNext(vcIDs[id])
-        self.navigationController!.pushViewController(breathingVC, animated: true)
+        self.navigationController?.pushViewController(breathingVC, animated: true)
     }
 }

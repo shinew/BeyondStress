@@ -19,6 +19,7 @@ class DeepBreathsViewController: PortraitViewController {
     var shrinkingDelay = 0.0
     var breathOutCounter = 0
     var nextVCID = ""
+    var startedAnimation = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,10 @@ class DeepBreathsViewController: PortraitViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.bubbleCallback()
+        if !self.startedAnimation {
+            self.startedAnimation = true
+            self.bubbleCallback()
+        }
     }
     
     func setNext(id: String) {
@@ -73,7 +77,6 @@ class DeepBreathsViewController: PortraitViewController {
                         }
                         else {
                             UIView.animateWithDuration(3, animations: {
-                                self.bubbleView.transform = CGAffineTransformMakeScale(0.5,0.5)
                                 self.breathLabel.text = "Great! You are now focused."
                                 self.moveToNextVC()
                             })
@@ -91,6 +94,6 @@ class DeepBreathsViewController: PortraitViewController {
     private func moveToNextVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let actionsVC = storyboard.instantiateViewControllerWithIdentifier(nextVCID) as UIViewController
-        self.navigationController!.pushViewController(actionsVC, animated: true)
+        self.navigationController?.pushViewController(actionsVC, animated: true)
     }
 }
