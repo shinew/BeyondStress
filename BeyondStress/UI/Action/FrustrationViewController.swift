@@ -10,10 +10,17 @@ import UIKit
 
 class FrustrationViewController: PortraitViewController {
 
+
+    @IBOutlet weak var step1Text: UITextView!
+    @IBOutlet weak var step2Text: UITextView!
+    @IBOutlet weak var step3Text: UITextView!
+    @IBOutlet weak var step4Text: UITextView!
+    
     @IBOutlet weak var checkMarkImage1: UIImageView!
     @IBOutlet weak var checkMarkImage2: UIImageView!
     @IBOutlet weak var checkMarkImage3: UIImageView!
     @IBOutlet weak var checkMarkImage4: UIImageView!
+    
     @IBOutlet weak var step1Button: UIButton!
     @IBOutlet weak var step2Button: UIButton!
     @IBOutlet weak var step3Button: UIButton!
@@ -22,6 +29,7 @@ class FrustrationViewController: PortraitViewController {
     
     private var images: [UIImageView]!
     private var buttons: [UIButton]!
+    private var text: [UITextView]!
     private var index: Int!
     private let finalIndex = 3
     

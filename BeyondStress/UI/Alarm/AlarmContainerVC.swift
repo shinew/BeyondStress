@@ -65,6 +65,8 @@ class AlarmContainerVC: UITableViewController {
         self.alarmContainer.add(Alarm(text: "Pre-work focus", minute: 30, hour: 8, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "Hey, let's take a moment to focus before work."))
         self.alarmContainer.add(Alarm(text: "After lunch", minute: 0, hour: 13, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "Take a breather after the lunch-break?"))
         self.alarmContainer.add(Alarm(text: "Night", minute: 0, hour: 19, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "Let's take a moment to be calm for family time."))
+        self.alarmContainer.add(Alarm(text: "Traffic", minute: 30, hour: 17, enabled: false, repeat: true, fireDate: NSDate().dateByAddingTimeInterval(5), dates: AlarmDate.getWeekdays(), index: -1, message: "James, remember to stay calm in traffic."))
+
         
         userDefaults.setBool(true, forKey: "addedDefaultAlarms")
         userDefaults.synchronize()
